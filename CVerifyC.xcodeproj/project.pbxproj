@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E5DB0591C6AE83E00B99695 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DB0581C6AE83E00B99695 /* LoginVC.swift */; };
+		5E5DB05B1C6C048100B99695 /* Metric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DB05A1C6C048100B99695 /* Metric.swift */; };
+		5E5DB05F1C6C175800B99695 /* UserData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DB05E1C6C175800B99695 /* UserData+CoreDataProperties.swift */; };
 		5EB50DBB1C6AB69800793E90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB50DBA1C6AB69800793E90 /* AppDelegate.swift */; };
 		5EB50DBD1C6AB69800793E90 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB50DBC1C6AB69800793E90 /* ViewController.swift */; };
 		5EB50DC01C6AB69800793E90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EB50DBE1C6AB69800793E90 /* Main.storyboard */; };
@@ -15,6 +18,8 @@
 		5EB50DC81C6AB69800793E90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EB50DC61C6AB69800793E90 /* LaunchScreen.storyboard */; };
 		5EB50DD31C6AB69900793E90 /* CVerifyCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB50DD21C6AB69900793E90 /* CVerifyCTests.swift */; };
 		5EB50DDE1C6AB69900793E90 /* CVerifyCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB50DDD1C6AB69900793E90 /* CVerifyCUITests.swift */; };
+		5EB50DF11C6AB77600793E90 /* CVC_Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB50DF01C6AB77600793E90 /* CVC_Constants.swift */; };
+		5EB50DF51C6AC07600793E90 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB50DF31C6AC07600793E90 /* UserData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E5DB0581C6AE83E00B99695 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		5E5DB05A1C6C048100B99695 /* Metric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Metric.swift; sourceTree = "<group>"; };
+		5E5DB05E1C6C175800B99695 /* UserData+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UserData+CoreDataProperties.swift"; path = "../UserData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5EB50DB71C6AB69800793E90 /* CVerifyC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CVerifyC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EB50DBA1C6AB69800793E90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EB50DBC1C6AB69800793E90 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +57,8 @@
 		5EB50DD91C6AB69900793E90 /* CVerifyCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CVerifyCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EB50DDD1C6AB69900793E90 /* CVerifyCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVerifyCUITests.swift; sourceTree = "<group>"; };
 		5EB50DDF1C6AB69900793E90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5EB50DF01C6AB77600793E90 /* CVC_Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVC_Constants.swift; sourceTree = "<group>"; };
+		5EB50DF31C6AC07600793E90 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserData.swift; path = ../UserData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +109,11 @@
 		5EB50DB91C6AB69800793E90 /* CVerifyC */ = {
 			isa = PBXGroup;
 			children = (
+				5EB50DEE1C6AB6C100793E90 /* Util */,
+				5EB50DED1C6AB6B500793E90 /* Controller */,
+				5EB50DEC1C6AB6AF00793E90 /* View */,
+				5EB50DEB1C6AB6A700793E90 /* Model */,
 				5EB50DBA1C6AB69800793E90 /* AppDelegate.swift */,
-				5EB50DBC1C6AB69800793E90 /* ViewController.swift */,
 				5EB50DBE1C6AB69800793E90 /* Main.storyboard */,
 				5EB50DC41C6AB69800793E90 /* Assets.xcassets */,
 				5EB50DC61C6AB69800793E90 /* LaunchScreen.storyboard */,
@@ -126,6 +139,40 @@
 				5EB50DDF1C6AB69900793E90 /* Info.plist */,
 			);
 			path = CVerifyCUITests;
+			sourceTree = "<group>";
+		};
+		5EB50DEB1C6AB6A700793E90 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5E5DB05E1C6C175800B99695 /* UserData+CoreDataProperties.swift */,
+				5EB50DF31C6AC07600793E90 /* UserData.swift */,
+				5E5DB05A1C6C048100B99695 /* Metric.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		5EB50DEC1C6AB6AF00793E90 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		5EB50DED1C6AB6B500793E90 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5EB50DBC1C6AB69800793E90 /* ViewController.swift */,
+				5E5DB0581C6AE83E00B99695 /* LoginVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		5EB50DEE1C6AB6C100793E90 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				5EB50DF01C6AB77600793E90 /* CVC_Constants.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +306,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E5DB05F1C6C175800B99695 /* UserData+CoreDataProperties.swift in Sources */,
+				5EB50DF51C6AC07600793E90 /* UserData.swift in Sources */,
 				5EB50DBD1C6AB69800793E90 /* ViewController.swift in Sources */,
+				5E5DB0591C6AE83E00B99695 /* LoginVC.swift in Sources */,
+				5E5DB05B1C6C048100B99695 /* Metric.swift in Sources */,
 				5EB50DC31C6AB69800793E90 /* CVerifyC.xcdatamodeld in Sources */,
+				5EB50DF11C6AB77600793E90 /* CVC_Constants.swift in Sources */,
 				5EB50DBB1C6AB69800793E90 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,6 +540,7 @@
 				5EB50DE41C6AB69900793E90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5EB50DE51C6AB69900793E90 /* Build configuration list for PBXNativeTarget "CVerifyCTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +549,7 @@
 				5EB50DE71C6AB69900793E90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5EB50DE81C6AB69900793E90 /* Build configuration list for PBXNativeTarget "CVerifyCUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +558,7 @@
 				5EB50DEA1C6AB69900793E90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
