@@ -18,15 +18,24 @@ class ViewController: UIViewController {
     @IBOutlet weak var startTrainingBtn: UIButton!
     @IBOutlet weak var percentTrainingCompletedLbl: UILabel!
     
-    private var _userSelected: Bool = false
+    private var _userSelected: Bool!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        //initialize and find currentUser
+        currentUser = CurrentUserData.init()
+        currentUser!.printUsers()
         
         //check for there are registered users, if not set defaults User and inactivate tutorial
         // and training buttons; else activate buttons
-        
+        if currentUser!.currentUser != nil {
+            _userSelected = true
+            updateVCUserSelected()
+        } else {
+            _userSelected = false
+            updateVCUserNotSelected()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,8 +43,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func addUser_changeUserBtnPressed(sender: AnyObject) {
-        if _userSelected {
-            
+        if _userSelected! {
+            performSegueWithIdentifier("SegueHomeToUserSelection", sender: nil)
         } else {
             performSegueWithIdentifier("SegueHomeToLogin", sender: nil)
         }
@@ -50,8 +59,36 @@ class ViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "SegueHomeToLogin" {
-            print("seguing")
+            print("seguing to login")
+        } else if segue.identifier == "SegueHomeToUserSelection" {
+            print("seguing to selection")
         }
+    }
+    
+    func updateVCUserSelected() {
+        //update user info
+        userNameLbl.text = "User: \(currentUser!.firstName.capitalizedString) \(currentUser!.lastName)"
+        percentTrainingCompletedLbl.text = "\(currentUser!.percentComplete)% Complete"
+        
+        //activate buttons
+        addUser_changeUserBtn.setTitle("Change User", forState: .Normal)
+        startTutorialBtn.alpha = 1.0
+        startTutorialBtn.enabled = true
+        startTrainingBtn.alpha = 1.0
+        startTrainingBtn.enabled = true
+    }
+    
+    func updateVCUserNotSelected() {
+        //default text
+        userNameLbl.text = "User: None logged in [Add new user to continue]"
+        percentTrainingCompletedLbl.text = "0% Complete"
+        
+        //inactivate buttons
+        addUser_changeUserBtn.setTitle("Change User", forState: .Normal)
+        startTutorialBtn.alpha = 0.5
+        startTutorialBtn.enabled = false
+        startTrainingBtn.alpha = 0.5
+        startTrainingBtn.enabled = false
     }
 }
 

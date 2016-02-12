@@ -2,7 +2,7 @@
 //  UserData+CoreDataProperties.swift
 //  CVerifyC
 //
-//  Created by Thomas Hartka on 2/10/16.
+//  Created by Thomas Hartka on 2/11/16.
 //  Copyright © 2016 UVA. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -17,8 +17,9 @@ extension UserData {
     @NSManaged var completionPercent: NSNumber?
     @NSManaged var institution: String?
     @NSManaged var firstName: String?
-    @NSManaged var trainingLevel: NSNumber?
+    @NSManaged var trainingLevel: String?
     @NSManaged var lastName: String?
     @NSManaged var userId: NSNumber?
+    @NSManaged var currentUser: NSNumber?
 
 }
