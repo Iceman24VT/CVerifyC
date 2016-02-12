@@ -47,10 +47,8 @@ class LoginVC: UIViewController {
             user.lastName = lastNameTxt.text
             user.institution = institutionTxt.text
             user.trainingLevel = trainingLevelTxt.text
-            user.userId = NSTimeIntervalSince1970
+            user.userId = NSUUID().UUIDString
             user.currentUser = true
-            
-            currentUser!.setCurrentUser(user)
             
             context.insertObject(user)
             
@@ -59,6 +57,9 @@ class LoginVC: UIViewController {
             } catch {
                 print("Could not save user")
             }
+            
+            currentUser!.setCurrentUser(user)
+            currentUser!.printUsers()
             
             //segue back to main screen
             performSegueWithIdentifier("SegueLoginToHome", sender: nil)

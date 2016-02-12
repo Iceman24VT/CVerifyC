@@ -50,6 +50,14 @@ class UserSelectionVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("Changing user")
+        if indexPath.row <= users.count{
+            currentUser?.setCurrentUser(users[indexPath.row])
+            dismissViewControllerAnimated(true, completion: nil)
+        }
+    }
     //end table view function
     
     @IBAction func backBtnPressed(sender: AnyObject) {

@@ -51,11 +51,11 @@ class CurrentUserData {
         }
     }
     
-    var userId: NSNumber {
+    var userId: String {
         if let userId = _currentUserData?.userId {
             return userId
         } else {
-            return -1
+            return "-1"
         }
     }
     
@@ -100,12 +100,12 @@ class CurrentUserData {
     }
     
     func setCurrentUser(newCurrentUser: UserData) {
-        clearAllCurrentUsers()
+        clearAllOtherCurrentUsers(newCurrentUser.userId!)
         _currentUserData = newCurrentUser
         newCurrentUser.currentUser = true
     }
     
-    func clearAllCurrentUsers(){
+    func clearAllOtherCurrentUsers(newCurrId: String){
         let app = UIApplication.sharedApplication().delegate as! AppDelegate
         let context = app.managedObjectContext
         let fetchRequest = NSFetchRequest(entityName: "UserData") //datamodel name
@@ -117,9 +117,16 @@ class CurrentUserData {
             print(err.debugDescription)
         }
         
+        print("cleaing All, but: newCurrID: \(newCurrId)")
+        
         for user in users {
-            print("Clearing: \(user.lastName)")
-            user.currentUser = false
+            if user.userId != newCurrId {
+                print("Clearing: \(user.lastName!), ID:\(user.userId!)")
+                user.currentUser = false
+            } else {
+                print("Keeping: \(user.lastName!), ID:\(user.userId!)")
+                user.currentUser = true
+            }
         }
         
         do {

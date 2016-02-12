@@ -13,8 +13,8 @@
 		5E5DB0691C6D131A00B99695 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DB0681C6D131A00B99695 /* UserCell.swift */; };
 		5E5DB06B1C6D1BC600B99695 /* CVC_Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DB06A1C6D1BC600B99695 /* CVC_Globals.swift */; };
 		5E5DB06D1C6D1FC600B99695 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DB06C1C6D1FC600B99695 /* RoundButton.swift */; };
-		5E5DB06F1C6D225D00B99695 /* UserData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DB06E1C6D225D00B99695 /* UserData+CoreDataProperties.swift */; };
 		5E5DB0711C6D7A5500B99695 /* CurrentUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DB0701C6D7A5500B99695 /* CurrentUserData.swift */; };
+		5E8F4DD81C6D991C00BD68FA /* UserData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8F4DD71C6D991C00BD68FA /* UserData+CoreDataProperties.swift */; };
 		5EB50DBB1C6AB69800793E90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB50DBA1C6AB69800793E90 /* AppDelegate.swift */; };
 		5EB50DBD1C6AB69800793E90 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB50DBC1C6AB69800793E90 /* ViewController.swift */; };
 		5EB50DC01C6AB69800793E90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EB50DBE1C6AB69800793E90 /* Main.storyboard */; };
@@ -51,8 +51,8 @@
 		5E5DB0681C6D131A00B99695 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		5E5DB06A1C6D1BC600B99695 /* CVC_Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVC_Globals.swift; sourceTree = "<group>"; };
 		5E5DB06C1C6D1FC600B99695 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
-		5E5DB06E1C6D225D00B99695 /* UserData+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UserData+CoreDataProperties.swift"; path = "../UserData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5E5DB0701C6D7A5500B99695 /* CurrentUserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUserData.swift; sourceTree = "<group>"; };
+		5E8F4DD71C6D991C00BD68FA /* UserData+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UserData+CoreDataProperties.swift"; path = "../UserData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5EB50DB71C6AB69800793E90 /* CVerifyC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CVerifyC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EB50DBA1C6AB69800793E90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EB50DBC1C6AB69800793E90 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -154,7 +154,7 @@
 		5EB50DEB1C6AB6A700793E90 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5E5DB06E1C6D225D00B99695 /* UserData+CoreDataProperties.swift */,
+				5E8F4DD71C6D991C00BD68FA /* UserData+CoreDataProperties.swift */,
 				5EB50DF31C6AC07600793E90 /* UserData.swift */,
 				5E5DB05A1C6C048100B99695 /* Metric.swift */,
 				5E5DB0701C6D7A5500B99695 /* CurrentUserData.swift */,
@@ -321,7 +321,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E5DB06F1C6D225D00B99695 /* UserData+CoreDataProperties.swift in Sources */,
 				5E5DB06D1C6D1FC600B99695 /* RoundButton.swift in Sources */,
 				5EB50DF51C6AC07600793E90 /* UserData.swift in Sources */,
 				5E5DB06B1C6D1BC600B99695 /* CVC_Globals.swift in Sources */,
@@ -332,6 +331,7 @@
 				5E5DB0711C6D7A5500B99695 /* CurrentUserData.swift in Sources */,
 				5EB50DC31C6AB69800793E90 /* CVerifyC.xcdatamodeld in Sources */,
 				5EB50DF11C6AB77600793E90 /* CVC_Constants.swift in Sources */,
+				5E8F4DD81C6D991C00BD68FA /* UserData+CoreDataProperties.swift in Sources */,
 				5E5DB0691C6D131A00B99695 /* UserCell.swift in Sources */,
 				5EB50DBB1C6AB69800793E90 /* AppDelegate.swift in Sources */,
 			);

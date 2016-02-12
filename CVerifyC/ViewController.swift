@@ -38,6 +38,12 @@ class ViewController: UIViewController {
         }
     }
 
+    override func viewDidAppear(animated: Bool) {
+        print("View did appear")
+        currentUser!.printUsers()
+        updateVCUserSelected()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -84,7 +90,7 @@ class ViewController: UIViewController {
         percentTrainingCompletedLbl.text = "0% Complete"
         
         //inactivate buttons
-        addUser_changeUserBtn.setTitle("Change User", forState: .Normal)
+        addUser_changeUserBtn.setTitle("Add User", forState: .Normal)
         startTutorialBtn.alpha = 0.5
         startTutorialBtn.enabled = false
         startTrainingBtn.alpha = 0.5

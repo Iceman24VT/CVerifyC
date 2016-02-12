@@ -15,11 +15,11 @@ import CoreData
 extension UserData {
 
     @NSManaged var completionPercent: NSNumber?
-    @NSManaged var institution: String?
-    @NSManaged var firstName: String?
-    @NSManaged var trainingLevel: String?
-    @NSManaged var lastName: String?
-    @NSManaged var userId: NSNumber?
     @NSManaged var currentUser: NSNumber?
+    @NSManaged var firstName: String?
+    @NSManaged var institution: String?
+    @NSManaged var lastName: String?
+    @NSManaged var trainingLevel: String?
+    @NSManaged var userId: String?
 
 }
