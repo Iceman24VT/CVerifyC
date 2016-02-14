@@ -38,28 +38,9 @@ class LoginVC: UIViewController {
         if dataComplete() {
             print("User data complete")
             
-            let app = UIApplication.sharedApplication().delegate as! AppDelegate
-            let context = app.managedObjectContext
-            let entity = NSEntityDescription.entityForName("UserData", inManagedObjectContext: context)!
-            let user = UserData(entity: entity, insertIntoManagedObjectContext: context)
+            users!.addUserAndSetAsCurrent(firstNameTxt.text!, lastName: lastNameTxt.text!, institution: institutionTxt.text!, trainingLevel: trainingLevelTxt.text!, percentComplete: 0.0, currentUser: true)
             
-            user.firstName = firstNameTxt.text
-            user.lastName = lastNameTxt.text
-            user.institution = institutionTxt.text
-            user.trainingLevel = trainingLevelTxt.text
-            user.userId = NSUUID().UUIDString
-            user.currentUser = true
-            
-            context.insertObject(user)
-            
-            do {
-                try context.save()
-            } catch {
-                print("Could not save user")
-            }
-            
-            currentUser!.setCurrentUser(user)
-            currentUser!.printUsers()
+            users!.printUsers()
             
             //segue back to main screen
             performSegueWithIdentifier("SegueLoginToHome", sender: nil)

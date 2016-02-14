@@ -24,12 +24,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         //initialize and find currentUser
-        currentUser = CurrentUserData.init()
-        currentUser!.printUsers()
+        users = Users.init()
+        questions = Questions.init()
         
         //check for there are registered users, if not set defaults User and inactivate tutorial
         // and training buttons; else activate buttons
-        if currentUser!.currentUser != nil {
+        if users.currentUser != nil {
             _userSelected = true
             updateVCUserSelected()
         } else {
@@ -40,8 +40,13 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(animated: Bool) {
         print("View did appear")
-        currentUser!.printUsers()
-        updateVCUserSelected()
+        users!.printUsers()
+        
+        if _userSelected == true {
+            updateVCUserSelected()
+        } else {
+            updateVCUserNotSelected()
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -73,8 +78,8 @@ class ViewController: UIViewController {
     
     func updateVCUserSelected() {
         //update user info
-        userNameLbl.text = "User: \(currentUser!.firstName.capitalizedString) \(currentUser!.lastName)"
-        percentTrainingCompletedLbl.text = "\(currentUser!.percentComplete)% Complete"
+        userNameLbl.text = "User: \(users.currentUser!.firstName!.capitalizedString) \(users!.currentUser!.lastName!.capitalizedString)"
+        percentTrainingCompletedLbl.text = "\(users.currentUser!.completionPercent!)% Complete"
         
         //activate buttons
         addUser_changeUserBtn.setTitle("Change User", forState: .Normal)

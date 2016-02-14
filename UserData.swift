@@ -23,4 +23,14 @@ class UserData: NSManagedObject {
         
         return percentCompleteInt
     }
+    
+    func setToUser(newData: UserData){
+        self.firstName = newData.firstName
+        self.lastName = newData.lastName
+        self.userId = newData.userId
+        self.currentUser = newData.currentUser
+        self.institution = newData.institution
+        self.trainingLevel = newData.trainingLevel
+        self.completionPercent = newData.completionPercent
+    }
 }

@@ -13,7 +13,7 @@ class UserSelectionVC: UIViewController, UITableViewDataSource, UITableViewDeleg
 
     @IBOutlet weak var userTableView: UITableView!
     
-    var users = [UserData]()
+    var usersList = [UserData]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +33,7 @@ class UserSelectionVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         if let cell = tableView.dequeueReusableCellWithIdentifier("UserCell") as? UserCell{
             
-            let user = users[indexPath.row]
+            let user = usersList[indexPath.row]
             cell.configureCell(user)
             return cell
         } else {
@@ -48,13 +48,13 @@ class UserSelectionVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
+        return usersList.count
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("Changing user")
-        if indexPath.row <= users.count{
-            currentUser?.setCurrentUser(users[indexPath.row])
+        if indexPath.row <= usersList.count{
+            users!.setCurrentUser(usersList[indexPath.row])
             dismissViewControllerAnimated(true, completion: nil)
         }
     }
@@ -72,15 +72,10 @@ class UserSelectionVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     }
     
     func fetchAndSetUsers () {
-        let app = UIApplication.sharedApplication().delegate as! AppDelegate
-        let context = app.managedObjectContext
-        let fetchRequest = NSFetchRequest(entityName: "UserData") //datamodel name
-        
-        do {
-            let results = try context.executeFetchRequest(fetchRequest)
-            self.users = results as! [UserData]
-        } catch let err as NSError {
-            print(err.debugDescription)
+        if let newList = users?.userList{
+            usersList = newList
+        } else {
+            print("User list did not load")
         }
     }
 }

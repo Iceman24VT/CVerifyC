@@ -8,4 +8,5 @@
 
 import Foundation
 
-var currentUser:CurrentUserData?
+var users: Users!
+var questions: Questions!
