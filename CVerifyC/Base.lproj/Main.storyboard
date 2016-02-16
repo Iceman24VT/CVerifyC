@@ -580,47 +580,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bc8-8X-J50">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" ambiguous="YES" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.01" maximumZoomScale="100" translatesAutoresizingMaskIntoConstraints="NO" id="bc8-8X-J50">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <subviews>
+                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dxn-Fr-IOs">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="3rm-xP-luY"/>
+                                            <constraint firstAttribute="height" constant="100" id="rbj-wJ-vpc"/>
+                                        </constraints>
+                                        <state key="normal" image="question-mark-white"/>
+                                    </button>
+                                    <button opaque="NO" alpha="0.5" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yyk-y8-Hoq">
+                                        <rect key="frame" x="500" y="0.0" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="PEp-e2-dyw"/>
+                                            <constraint firstAttribute="height" constant="100" id="kIV-Bb-Vi9"/>
+                                        </constraints>
+                                        <state key="normal" image="home-icon-white"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="yyk-y8-Hoq" firstAttribute="top" secondItem="bc8-8X-J50" secondAttribute="top" id="93t-nm-sUq"/>
+                                    <constraint firstAttribute="trailing" secondItem="yyk-y8-Hoq" secondAttribute="trailing" id="Ij5-Ba-tOX"/>
+                                    <constraint firstItem="Dxn-Fr-IOs" firstAttribute="leading" secondItem="bc8-8X-J50" secondAttribute="leading" id="iuI-Xm-tt9"/>
+                                    <constraint firstItem="Dxn-Fr-IOs" firstAttribute="top" secondItem="bc8-8X-J50" secondAttribute="top" id="o4p-Z4-cue"/>
+                                </constraints>
                                 <connections>
+                                    <outlet property="delegate" destination="ThP-fs-RN5" id="HNS-Bs-hTw"/>
                                     <outletCollection property="gestureRecognizers" destination="1Wb-8O-BBF" appends="YES" id="BAJ-WH-FDX"/>
                                     <outletCollection property="gestureRecognizers" destination="rWu-QH-oya" appends="YES" id="Fgk-o0-EvD"/>
                                 </connections>
                             </scrollView>
-                            <button opaque="NO" alpha="0.5" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yyk-y8-Hoq">
-                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="PEp-e2-dyw"/>
-                                    <constraint firstAttribute="height" constant="100" id="kIV-Bb-Vi9"/>
-                                </constraints>
-                                <state key="normal" image="home-icon-white"/>
-                                <connections>
-                                    <action selector="homeBtnPressed:" destination="ThP-fs-RN5" eventType="touchUpInside" id="xxn-RZ-Htg"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dxn-Fr-IOs">
-                                <rect key="frame" x="500" y="0.0" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="3rm-xP-luY"/>
-                                    <constraint firstAttribute="height" constant="100" id="rbj-wJ-vpc"/>
-                                </constraints>
-                                <state key="normal" image="question-mark-white"/>
-                                <connections>
-                                    <action selector="promptBtnPressed:" destination="ThP-fs-RN5" eventType="touchUpInside" id="s0g-FC-59f"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="bc8-8X-J50" secondAttribute="trailing" id="PJY-9i-Pg0"/>
                             <constraint firstItem="bc8-8X-J50" firstAttribute="top" secondItem="Y53-Fe-IqE" secondAttribute="top" id="YDL-Rh-2Vc"/>
                             <constraint firstItem="hoD-A5-T7F" firstAttribute="top" secondItem="bc8-8X-J50" secondAttribute="bottom" id="awt-2q-9SW"/>
-                            <constraint firstItem="yyk-y8-Hoq" firstAttribute="top" secondItem="Y53-Fe-IqE" secondAttribute="top" id="g41-Cj-qnr"/>
-                            <constraint firstItem="Dxn-Fr-IOs" firstAttribute="top" secondItem="Y53-Fe-IqE" secondAttribute="top" id="p3G-Wc-4TL"/>
-                            <constraint firstItem="yyk-y8-Hoq" firstAttribute="leading" secondItem="Y53-Fe-IqE" secondAttribute="leading" id="qQe-0a-BLH"/>
-                            <constraint firstAttribute="trailing" secondItem="Dxn-Fr-IOs" secondAttribute="trailing" id="qfy-7n-1gi"/>
                             <constraint firstItem="bc8-8X-J50" firstAttribute="leading" secondItem="Y53-Fe-IqE" secondAttribute="leading" id="x3h-Ym-ZJO"/>
                         </constraints>
                     </view>
