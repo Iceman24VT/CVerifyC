@@ -63,6 +63,9 @@ class ViewController: UIViewController {
     }
 
     @IBAction func startTutorialBtnPressed(sender: AnyObject) {
+        if _userSelected == true {
+            performSegueWithIdentifier("SegueHomeToQuestion", sender: nil)
+        }
     }
     
     @IBAction func startTrainingBtnPressed(sender: AnyObject) {
@@ -73,6 +76,8 @@ class ViewController: UIViewController {
             print("seguing to login")
         } else if segue.identifier == "SegueHomeToUserSelection" {
             print("seguing to selection")
+        } else if segue.identifier == "SegueHomeToQuestion" {
+            print("seguing to question")
         }
     }
     
