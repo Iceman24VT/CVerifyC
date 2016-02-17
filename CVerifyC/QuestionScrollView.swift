@@ -30,6 +30,12 @@ class QuestionScrollView: UIScrollView, UIScrollViewDelegate {
         doubleTapRecognizer.numberOfTouchesRequired = 1
         self.addGestureRecognizer(doubleTapRecognizer)
         
+        let singleTapRecognizer = UITapGestureRecognizer(target: self, action: "scrollViewSingleTapped:")
+        singleTapRecognizer.numberOfTapsRequired = 1
+        singleTapRecognizer.requireGestureRecognizerToFail(doubleTapRecognizer)
+        singleTapRecognizer.numberOfTouchesRequired = 1
+        self.addGestureRecognizer(singleTapRecognizer)
+        
         let image = scrollImage
         _imgView = UIImageView(image: image)
         let imageFrame = CGRect(origin: CGPoint(x: 0, y: 0), size:image.size)
@@ -84,6 +90,8 @@ class QuestionScrollView: UIScrollView, UIScrollViewDelegate {
     }
     
     func scrollViewDoubleTapped(recognizer: UITapGestureRecognizer) {
+        print("Double tap")
+        
         // 1
         let pointInView = recognizer.locationInView(_imgView)
         
@@ -104,6 +112,11 @@ class QuestionScrollView: UIScrollView, UIScrollViewDelegate {
         
         // 4
         self.zoomToRect(rectToZoomTo, animated: true)
+    }
+    
+    func scrollViewSingleTapped(recognizer: UITapGestureRecognizer){
+        let pointInView = recognizer.locationInView(_imgView)
+        print("Single tap, x:\(pointInView.x) y:\(pointInView.y)")
     }
     
     func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {

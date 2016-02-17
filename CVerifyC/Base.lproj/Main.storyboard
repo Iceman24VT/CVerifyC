@@ -596,6 +596,9 @@
                                     <constraint firstAttribute="height" constant="100" id="kIV-Bb-Vi9"/>
                                 </constraints>
                                 <state key="normal" image="home-icon-white"/>
+                                <connections>
+                                    <action selector="homeBtnPressed:" destination="ThP-fs-RN5" eventType="touchUpInside" id="eTY-hn-q25"/>
+                                </connections>
                             </button>
                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dxn-Fr-IOs">
                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -608,21 +611,38 @@
                                     <action selector="promptBtnPressed:" destination="ThP-fs-RN5" eventType="touchUpInside" id="xQ3-iE-0eL"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7R-g2-DAB">
+                                <rect key="frame" x="0.0" y="545" width="128" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="0gY-kL-aep"/>
+                                    <constraint firstAttribute="width" constant="128" id="t6s-B8-ljm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
+                                <state key="normal" title="Reset">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetBtnPressed:" destination="ThP-fs-RN5" eventType="touchUpInside" id="PCB-Zw-ZOk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Dxn-Fr-IOs" firstAttribute="leading" secondItem="Y53-Fe-IqE" secondAttribute="leading" id="3QU-sg-Iww"/>
+                            <constraint firstItem="hoD-A5-T7F" firstAttribute="top" secondItem="c7R-g2-DAB" secondAttribute="bottom" id="Br6-sO-KrX"/>
                             <constraint firstAttribute="trailing" secondItem="bc8-8X-J50" secondAttribute="trailing" id="PJY-9i-Pg0"/>
                             <constraint firstAttribute="trailing" secondItem="yyk-y8-Hoq" secondAttribute="trailing" id="Qfl-lJ-gvi"/>
                             <constraint firstItem="bc8-8X-J50" firstAttribute="top" secondItem="Y53-Fe-IqE" secondAttribute="top" id="YDL-Rh-2Vc"/>
                             <constraint firstItem="hoD-A5-T7F" firstAttribute="top" secondItem="bc8-8X-J50" secondAttribute="bottom" id="awt-2q-9SW"/>
                             <constraint firstItem="yyk-y8-Hoq" firstAttribute="top" secondItem="Y53-Fe-IqE" secondAttribute="top" id="em6-is-8jk"/>
+                            <constraint firstItem="c7R-g2-DAB" firstAttribute="leading" secondItem="Y53-Fe-IqE" secondAttribute="leading" id="khZ-Ie-dZG"/>
                             <constraint firstItem="Dxn-Fr-IOs" firstAttribute="top" secondItem="Y53-Fe-IqE" secondAttribute="top" id="txO-6O-VRZ"/>
                             <constraint firstItem="bc8-8X-J50" firstAttribute="leading" secondItem="Y53-Fe-IqE" secondAttribute="leading" id="x3h-Ym-ZJO"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imgScrollView" destination="bc8-8X-J50" id="3cw-F4-xBU"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="SegueQuestionToHome" id="blz-OA-0uu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NBz-nE-kNc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -639,5 +659,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="OcD-Ax-8rr"/>
+        <segue reference="blz-OA-0uu"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -21,7 +21,21 @@ class QuestionVC: UIViewController, UIScrollViewDelegate {
         let image = UIImage(named: "normal_CXR_lrg")
         imgScrollView.setupImage(_screenSize, scrollOrigin: CGPoint(x: 0.0, y: 0.0), scrollImage: image!)
     }
+    
     @IBAction func promptBtnPressed(sender: AnyObject) {
-        imgScrollView.resetView()
+    }
+    
+    @IBAction func homeBtnPressed(sender: AnyObject) {
+        //segue back to main screen
+        performSegueWithIdentifier("SegueQuestionToHome", sender: nil)
+    }
+    
+    @IBAction func resetBtnPressed(sender: AnyObject) {
+        imgScrollView.resetView()        
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "SegueQuestionToHome" {
+            print("seguing to Home")
+        }
     }
 }

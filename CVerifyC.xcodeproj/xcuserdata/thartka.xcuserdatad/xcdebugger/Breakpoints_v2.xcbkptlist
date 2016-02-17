@@ -250,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CVerifyC/QuestionScrollView.swift"
-            timestampString = "477372447.892269"
+            timestampString = "477375508.669136"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "setupImage(_:scrollOrigin:scrollImage:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -266,11 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CVerifyC/QuestionScrollView.swift"
-            timestampString = "477373341.808103"
+            timestampString = "477375508.669136"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "setupImage(_:scrollOrigin:scrollImage:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -282,11 +282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CVerifyC/QuestionScrollView.swift"
-            timestampString = "477373342.746595"
+            timestampString = "477375508.669136"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "setupImage(_:scrollOrigin:scrollImage:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -298,12 +298,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CVerifyC/QuestionScrollView.swift"
-            timestampString = "477373378.240702"
+            timestampString = "477375508.669136"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "resetView()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CVerifyC/QuestionVC.swift"
+            timestampString = "477374230.258764"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "homeBtnPressed(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CVerifyC/QuestionScrollView.swift"
+            timestampString = "477375508.669136"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "scrollViewDoubleTapped(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
