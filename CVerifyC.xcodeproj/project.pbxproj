@@ -18,6 +18,7 @@
 		5E8F4DEA1C6FFEE700BD68FA /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8F4DE91C6FFEE700BD68FA /* Questions.swift */; };
 		5E8F4DEC1C70011400BD68FA /* QuestionData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8F4DEB1C70011400BD68FA /* QuestionData+CoreDataProperties.swift */; };
 		5E8F4DEF1C701EB900BD68FA /* QuestionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8F4DEE1C701EB900BD68FA /* QuestionVC.swift */; };
+		5E8F4E2E1C73E9D700BD68FA /* QuestionScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8F4E2D1C73E9D700BD68FA /* QuestionScrollView.swift */; };
 		5EB50DBB1C6AB69800793E90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB50DBA1C6AB69800793E90 /* AppDelegate.swift */; };
 		5EB50DBD1C6AB69800793E90 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB50DBC1C6AB69800793E90 /* ViewController.swift */; };
 		5EB50DC01C6AB69800793E90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EB50DBE1C6AB69800793E90 /* Main.storyboard */; };
@@ -59,6 +60,7 @@
 		5E8F4DE91C6FFEE700BD68FA /* Questions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 		5E8F4DEB1C70011400BD68FA /* QuestionData+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "QuestionData+CoreDataProperties.swift"; path = "../QuestionData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5E8F4DEE1C701EB900BD68FA /* QuestionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionVC.swift; sourceTree = "<group>"; };
+		5E8F4E2D1C73E9D700BD68FA /* QuestionScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionScrollView.swift; sourceTree = "<group>"; };
 		5EB50DB71C6AB69800793E90 /* CVerifyC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CVerifyC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EB50DBA1C6AB69800793E90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EB50DBC1C6AB69800793E90 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			children = (
 				5E5DB0681C6D131A00B99695 /* UserCell.swift */,
 				5E5DB06C1C6D1FC600B99695 /* RoundButton.swift */,
+				5E8F4E2D1C73E9D700BD68FA /* QuestionScrollView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				5E8F4DEC1C70011400BD68FA /* QuestionData+CoreDataProperties.swift in Sources */,
 				5E5DB0591C6AE83E00B99695 /* LoginVC.swift in Sources */,
 				5E5DB0671C6D0E5100B99695 /* UserSelectionVC.swift in Sources */,
+				5E8F4E2E1C73E9D700BD68FA /* QuestionScrollView.swift in Sources */,
 				5E8F4DDA1C6EC5B400BD68FA /* Users.swift in Sources */,
 				5EB50DC31C6AB69800793E90 /* CVerifyC.xcdatamodeld in Sources */,
 				5EB50DF11C6AB77600793E90 /* CVC_Constants.swift in Sources */,
