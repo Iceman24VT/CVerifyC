@@ -17,6 +17,7 @@ class QuestionScrollView: UIScrollView, UIScrollViewDelegate {
     private var _arrowPosition: CGPoint?
     private var _filterContext: CIContext!
     private var _contrastFilter: CIFilter!
+    private var _brightnessFilter: CIFilter!
     private var _beginImage: CIImage!
     
     var arrowPosition: CGPoint? {
@@ -77,6 +78,12 @@ class QuestionScrollView: UIScrollView, UIScrollViewDelegate {
         //_contrastFilter = CIFilter(name: "CISepiaTone")
         _contrastFilter = CIFilter(name: "CIColorControls")
         _contrastFilter.setValue(_beginImage, forKey: kCIInputImageKey)
+        if let contrastValue = _contrastFilter.valueForKey(kCIInputContrastKey) as? NSNumber{
+            print("ContrastValue: \(contrastValue)")
+        }
+        if let brightnessValue = _contrastFilter.valueForKey(kCIInputBrightnessKey) as? NSNumber{
+            print("BrightnessValue: \(brightnessValue)")
+        }
         //_contrastFilter.setValue(0.5, forKey: kCIInputIntensityKey)
         _contrastFilter.setValue(0.5, forKey: kCIInputContrastKey)
         
@@ -178,6 +185,16 @@ class QuestionScrollView: UIScrollView, UIScrollViewDelegate {
         if let outputImage = _contrastFilter.outputImage {
             let cgimg = _filterContext.createCGImage(outputImage, fromRect: outputImage.extent)
         
+            let newImage = UIImage(CGImage: cgimg)
+            _imgView.image = newImage
+        }
+    }
+    
+    func changeBrightness(newBrightness: Float!) {
+        _contrastFilter.setValue(newBrightness - 0.5, forKey: kCIInputBrightnessKey)
+        if let outputImage = _contrastFilter.outputImage {
+            let cgimg = _filterContext.createCGImage(outputImage, fromRect: outputImage.extent)
+            
             let newImage = UIImage(CGImage: cgimg)
             _imgView.image = newImage
         }

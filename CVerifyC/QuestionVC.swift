@@ -45,6 +45,7 @@ class QuestionVC: UIViewController, UIScrollViewDelegate {
 
     @IBAction func brightnessSliderChanged(sender: UISlider) {
         print("Brightness: \(sender.value)")
+        imgScrollView.changeBrightness(sender.value)
     }
     
     @IBAction func contrastSliderChanged(sender: UISlider) {
