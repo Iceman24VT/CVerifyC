@@ -589,6 +589,26 @@
                                     <outletCollection property="gestureRecognizers" destination="rWu-QH-oya" appends="YES" id="Fgk-o0-EvD"/>
                                 </connections>
                             </scrollView>
+                            <slider opaque="NO" alpha="0.5" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="aLv-hA-0h1">
+                                <rect key="frame" x="480" y="560" width="118" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="114" id="GDT-Dm-JxM"/>
+                                    <constraint firstAttribute="height" constant="30" id="OX3-Kg-0HI"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="contrastSliderChanged:" destination="ThP-fs-RN5" eventType="valueChanged" id="gyf-JG-THt"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" alpha="0.5" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="U9S-RF-6UF">
+                                <rect key="frame" x="480" y="520" width="118" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="114" id="9BX-N8-NDr"/>
+                                    <constraint firstAttribute="height" constant="30" id="NiD-3c-Msa"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="brightnessSliderChanged:" destination="ThP-fs-RN5" eventType="valueChanged" id="Fiv-eR-Vy1"/>
+                                </connections>
+                            </slider>
                             <button opaque="NO" alpha="0.5" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yyk-y8-Hoq">
                                 <rect key="frame" x="500" y="0.0" width="100" height="100"/>
                                 <constraints>
@@ -629,18 +649,24 @@
                         <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Dxn-Fr-IOs" firstAttribute="leading" secondItem="Y53-Fe-IqE" secondAttribute="leading" id="3QU-sg-Iww"/>
+                            <constraint firstAttribute="trailing" secondItem="U9S-RF-6UF" secondAttribute="trailing" constant="20" id="BU8-fI-oI4"/>
                             <constraint firstItem="hoD-A5-T7F" firstAttribute="top" secondItem="c7R-g2-DAB" secondAttribute="bottom" id="Br6-sO-KrX"/>
                             <constraint firstAttribute="trailing" secondItem="bc8-8X-J50" secondAttribute="trailing" id="PJY-9i-Pg0"/>
                             <constraint firstAttribute="trailing" secondItem="yyk-y8-Hoq" secondAttribute="trailing" id="Qfl-lJ-gvi"/>
                             <constraint firstItem="bc8-8X-J50" firstAttribute="top" secondItem="Y53-Fe-IqE" secondAttribute="top" id="YDL-Rh-2Vc"/>
                             <constraint firstItem="hoD-A5-T7F" firstAttribute="top" secondItem="bc8-8X-J50" secondAttribute="bottom" id="awt-2q-9SW"/>
+                            <constraint firstItem="hoD-A5-T7F" firstAttribute="top" secondItem="aLv-hA-0h1" secondAttribute="bottom" id="by3-eW-0L4"/>
                             <constraint firstItem="yyk-y8-Hoq" firstAttribute="top" secondItem="Y53-Fe-IqE" secondAttribute="top" id="em6-is-8jk"/>
+                            <constraint firstItem="aLv-hA-0h1" firstAttribute="top" secondItem="U9S-RF-6UF" secondAttribute="bottom" constant="10" id="hl8-zW-4Lq"/>
                             <constraint firstItem="c7R-g2-DAB" firstAttribute="leading" secondItem="Y53-Fe-IqE" secondAttribute="leading" id="khZ-Ie-dZG"/>
+                            <constraint firstAttribute="trailing" secondItem="aLv-hA-0h1" secondAttribute="trailing" constant="20" id="qV6-tQ-zcc"/>
                             <constraint firstItem="Dxn-Fr-IOs" firstAttribute="top" secondItem="Y53-Fe-IqE" secondAttribute="top" id="txO-6O-VRZ"/>
                             <constraint firstItem="bc8-8X-J50" firstAttribute="leading" secondItem="Y53-Fe-IqE" secondAttribute="leading" id="x3h-Ym-ZJO"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="brightnessSlider" destination="U9S-RF-6UF" id="Usk-7c-RHS"/>
+                        <outlet property="contrastSlider" destination="aLv-hA-0h1" id="dQH-bL-NFM"/>
                         <outlet property="imgScrollView" destination="bc8-8X-J50" id="3cw-F4-xBU"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="SegueQuestionToHome" id="blz-OA-0uu"/>
                     </connections>

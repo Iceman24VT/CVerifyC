@@ -9,4 +9,5 @@
 import Foundation
 import UIKit
 
-//let MAX_QUESTION_ZOOM: CGFloat = 5.0
+let MAX_QUESTION_ZOOM: CGFloat = 5.0
+let DOUBLE_TAP_QUESTION_ZOOM: CGFloat = 2.0

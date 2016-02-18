@@ -15,10 +15,20 @@ class QuestionScrollView: UIScrollView, UIScrollViewDelegate {
     private var _arrowPlaced: Bool!
     private var _arrowImageView: UIImageView?
     private var _arrowPosition: CGPoint?
+    private var _filterContext: CIContext!
+    private var _contrastFilter: CIFilter!
+    private var _beginImage: CIImage!
+    
+    var arrowPosition: CGPoint? {
+        return _arrowPosition
+    }
+    
+    var arrowPlaced: Bool! {
+        return _arrowPlaced
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-    
     }
     
     func setupImage(scrollFrame: CGRect, scrollOrigin: CGPoint, scrollImage: UIImage) {
@@ -59,8 +69,21 @@ class QuestionScrollView: UIScrollView, UIScrollViewDelegate {
         self.minimumZoomScale = minScale;
         
         // 5
-        self.maximumZoomScale = 5.0
+        self.maximumZoomScale = MAX_QUESTION_ZOOM
         self.zoomScale = minScale;
+        
+        _beginImage = CIImage(image: scrollImage)
+        _filterContext = CIContext(options:nil)
+        //_contrastFilter = CIFilter(name: "CISepiaTone")
+        _contrastFilter = CIFilter(name: "CIColorControls")
+        _contrastFilter.setValue(_beginImage, forKey: kCIInputImageKey)
+        //_contrastFilter.setValue(0.5, forKey: kCIInputIntensityKey)
+        _contrastFilter.setValue(0.5, forKey: kCIInputContrastKey)
+        
+        let outputImage = _contrastFilter.outputImage
+        
+        _filterContext = CIContext(options:nil)
+        //let cgimg = _contrastFilter.createCGImage(outputImage, fromRect: outputImage.extent())
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -91,6 +114,7 @@ class QuestionScrollView: UIScrollView, UIScrollViewDelegate {
         }
         
         _imgView.frame = contentsFrame
+        _contrastFilter = CIFilter(name: "CISepiaTone")
     }
     
     func scrollViewDoubleTapped(recognizer: UITapGestureRecognizer) {
@@ -100,7 +124,7 @@ class QuestionScrollView: UIScrollView, UIScrollViewDelegate {
         let pointInView = recognizer.locationInView(_imgView)
         
         // 2
-        var newZoomScale = self.zoomScale * 1.5
+        var newZoomScale = self.zoomScale * DOUBLE_TAP_QUESTION_ZOOM
         newZoomScale = min(newZoomScale, self.maximumZoomScale)
         print("imgScrollView.maximumZoomScale: \(self.maximumZoomScale)")
         print("imgScrollView.minimumZoomScale: \(self.minimumZoomScale)")
@@ -146,10 +170,16 @@ class QuestionScrollView: UIScrollView, UIScrollViewDelegate {
     
     func scrollViewDidZoom(scrollView: UIScrollView) {
         centerScrollViewContents()
+    }
+    
+    func changeContrast(newContrast: Float!) {
+        //_contrastFilter.setValue(newContrast, forKey: kCIInputIntensityKey)
+        _contrastFilter.setValue(newContrast + 0.5, forKey: kCIInputContrastKey)
+        if let outputImage = _contrastFilter.outputImage {
+            let cgimg = _filterContext.createCGImage(outputImage, fromRect: outputImage.extent)
         
-//        if _arrowPlaced == true {
-//            _arrowImageView!.frame.origin.x = _arrowImageView!.frame.origin.x * scrollView.zoomScale;
-//            _arrowImageView!.frame.origin.y = (_arrowImageView!.frame.origin.y * scrollView.zoomScale) + (_imgView.frame.origin.y)
-//        }
+            let newImage = UIImage(CGImage: cgimg)
+            _imgView.image = newImage
+        }
     }
 }

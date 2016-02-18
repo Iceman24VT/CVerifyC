@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import AssetsLibrary
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

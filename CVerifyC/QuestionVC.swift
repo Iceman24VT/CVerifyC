@@ -10,6 +10,8 @@ import UIKit
 
 class QuestionVC: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var imgScrollView: QuestionScrollView!
+    @IBOutlet weak var brightnessSlider: UISlider!
+    @IBOutlet weak var contrastSlider: UISlider!
     
     private var _screenSize: CGRect!
     
@@ -31,11 +33,22 @@ class QuestionVC: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func resetBtnPressed(sender: AnyObject) {
-        imgScrollView.resetView()        
+        imgScrollView.resetView()
+        brightnessSlider.value = 0.5
+        contrastSlider.value = 0.5
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "SegueQuestionToHome" {
             print("seguing to Home")
         }
+    }
+
+    @IBAction func brightnessSliderChanged(sender: UISlider) {
+        print("Brightness: \(sender.value)")
+    }
+    
+    @IBAction func contrastSliderChanged(sender: UISlider) {
+        print("Contrast: \(sender.value)")
+        imgScrollView.changeContrast(sender.value)
     }
 }
