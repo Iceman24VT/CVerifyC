@@ -12,6 +12,9 @@ class QuestionScrollView: UIScrollView, UIScrollViewDelegate {
     private var _scrollViewFrame: CGRect!
     private var _imgView: UIImageView!
     private var _defaultZoom: CGFloat!
+    private var _arrowPlaced: Bool!
+    private var _arrowImageView: UIImageView?
+    private var _arrowPosition: CGPoint?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -20,6 +23,7 @@ class QuestionScrollView: UIScrollView, UIScrollViewDelegate {
     
     func setupImage(scrollFrame: CGRect, scrollOrigin: CGPoint, scrollImage: UIImage) {
         _scrollViewFrame = scrollFrame
+        _arrowPlaced = false
         
         self.frame = scrollFrame
         self.bounds = scrollFrame
@@ -115,15 +119,37 @@ class QuestionScrollView: UIScrollView, UIScrollViewDelegate {
     }
     
     func scrollViewSingleTapped(recognizer: UITapGestureRecognizer){
-        let pointInView = recognizer.locationInView(_imgView)
-        print("Single tap, x:\(pointInView.x) y:\(pointInView.y)")
+        _arrowPosition = recognizer.locationInView(_imgView)
+        let pointInScrollView = recognizer.locationInView(self)
+        print("Single tap, imageView x:\(_arrowPosition!.x) y:\(_arrowPosition!.y)")
+        print("Single tap, scrollView x:\(pointInScrollView.x) y:\(pointInScrollView.y)")
+        
+        if _arrowPlaced == false {
+            let arrowImage = UIImage(named: "red-arrow-diagonal")
+            let arrowFrame = CGRect(x: _arrowPosition!.x, y: _arrowPosition!.y, width: (arrowImage?.size.width)!, height: (arrowImage?.size.height)!)
+            _arrowImageView = UIImageView.init(image: arrowImage)
+            _arrowImageView!.frame = arrowFrame
+            //self.addSubview(_arrowImageView!)
+            _imgView.addSubview(_arrowImageView!)
+            
+            _arrowPlaced = true
+        } else {
+            _arrowImageView!.frame.origin.x = _arrowPosition!.x
+            _arrowImageView!.frame.origin.y = _arrowPosition!.y
+        }
     }
     
     func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
         return _imgView
+        //return _arrowImageView
     }
     
     func scrollViewDidZoom(scrollView: UIScrollView) {
         centerScrollViewContents()
+        
+//        if _arrowPlaced == true {
+//            _arrowImageView!.frame.origin.x = _arrowImageView!.frame.origin.x * scrollView.zoomScale;
+//            _arrowImageView!.frame.origin.y = (_arrowImageView!.frame.origin.y * scrollView.zoomScale) + (_imgView.frame.origin.y)
+//        }
     }
 }
