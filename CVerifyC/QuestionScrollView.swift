@@ -191,7 +191,8 @@ class QuestionScrollView: UIScrollView, UIScrollViewDelegate {
     }
     
     func changeBrightness(newBrightness: Float!) {
-        _contrastFilter.setValue(newBrightness - 0.5, forKey: kCIInputBrightnessKey)
+        //_contrastFilter.setValue(newBrightness - 0.5, forKey: kCIInputBrightnessKey)
+        _contrastFilter.setValue(newBrightness - 0.5, forKey: kCIInputSaturationKey)
         if let outputImage = _contrastFilter.outputImage {
             let cgimg = _filterContext.createCGImage(outputImage, fromRect: outputImage.extent)
             
