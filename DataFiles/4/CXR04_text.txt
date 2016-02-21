@@ -1,0 +1,11 @@
+#PROMPT
+Identify a pulmonary infiltrate.
+#ENDPROMPT
+
+#CORRECT_RESPONSE
+Correct.  This patient has infiltrate in the right middle lobe of the lung, likely pneumonia.
+#ENDCORRECT_RESPONSE
+
+#INCORRECT_RESPONSE
+Incorrect.  This patient has infiltrate in the right middle lobe of the lung, likely pneumonia.
+#ENDINCORRECT_RESPONSE

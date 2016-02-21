@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E4C52851C7A3CBC00A369F2 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4C52841C7A3CBC00A369F2 /* Question.swift */; };
 		5E5DB0591C6AE83E00B99695 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DB0581C6AE83E00B99695 /* LoginVC.swift */; };
 		5E5DB0671C6D0E5100B99695 /* UserSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DB0661C6D0E5100B99695 /* UserSelectionVC.swift */; };
 		5E5DB0691C6D131A00B99695 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DB0681C6D131A00B99695 /* UserCell.swift */; };
@@ -14,9 +15,7 @@
 		5E5DB06D1C6D1FC600B99695 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DB06C1C6D1FC600B99695 /* RoundButton.swift */; };
 		5E8F4DD81C6D991C00BD68FA /* UserData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8F4DD71C6D991C00BD68FA /* UserData+CoreDataProperties.swift */; };
 		5E8F4DDA1C6EC5B400BD68FA /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8F4DD91C6EC5B400BD68FA /* Users.swift */; };
-		5E8F4DE81C6FFED000BD68FA /* QuestionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8F4DE61C6FFED000BD68FA /* QuestionData.swift */; };
 		5E8F4DEA1C6FFEE700BD68FA /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8F4DE91C6FFEE700BD68FA /* Questions.swift */; };
-		5E8F4DEC1C70011400BD68FA /* QuestionData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8F4DEB1C70011400BD68FA /* QuestionData+CoreDataProperties.swift */; };
 		5E8F4DEF1C701EB900BD68FA /* QuestionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8F4DEE1C701EB900BD68FA /* QuestionVC.swift */; };
 		5E8F4E2E1C73E9D700BD68FA /* QuestionScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8F4E2D1C73E9D700BD68FA /* QuestionScrollView.swift */; };
 		5EB50DBB1C6AB69800793E90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB50DBA1C6AB69800793E90 /* AppDelegate.swift */; };
@@ -49,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E4C52841C7A3CBC00A369F2 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		5E5DB0581C6AE83E00B99695 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		5E5DB0661C6D0E5100B99695 /* UserSelectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSelectionVC.swift; sourceTree = "<group>"; };
 		5E5DB0681C6D131A00B99695 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
@@ -56,9 +56,7 @@
 		5E5DB06C1C6D1FC600B99695 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		5E8F4DD71C6D991C00BD68FA /* UserData+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UserData+CoreDataProperties.swift"; path = "../UserData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5E8F4DD91C6EC5B400BD68FA /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
-		5E8F4DE61C6FFED000BD68FA /* QuestionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionData.swift; path = ../QuestionData.swift; sourceTree = "<group>"; };
 		5E8F4DE91C6FFEE700BD68FA /* Questions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
-		5E8F4DEB1C70011400BD68FA /* QuestionData+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "QuestionData+CoreDataProperties.swift"; path = "../QuestionData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5E8F4DEE1C701EB900BD68FA /* QuestionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionVC.swift; sourceTree = "<group>"; };
 		5E8F4E2D1C73E9D700BD68FA /* QuestionScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionScrollView.swift; sourceTree = "<group>"; };
 		5EB50DB71C6AB69800793E90 /* CVerifyC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CVerifyC.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,12 +160,11 @@
 		5EB50DEB1C6AB6A700793E90 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5E8F4DEB1C70011400BD68FA /* QuestionData+CoreDataProperties.swift */,
-				5E8F4DE61C6FFED000BD68FA /* QuestionData.swift */,
-				5E8F4DD71C6D991C00BD68FA /* UserData+CoreDataProperties.swift */,
-				5EB50DF31C6AC07600793E90 /* UserData.swift */,
-				5E8F4DD91C6EC5B400BD68FA /* Users.swift */,
 				5E8F4DE91C6FFEE700BD68FA /* Questions.swift */,
+				5EB50DF31C6AC07600793E90 /* UserData.swift */,
+				5E8F4DD71C6D991C00BD68FA /* UserData+CoreDataProperties.swift */,
+				5E8F4DD91C6EC5B400BD68FA /* Users.swift */,
+				5E4C52841C7A3CBC00A369F2 /* Question.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -270,6 +267,7 @@
 				TargetAttributes = {
 					5EB50DB61C6AB69800793E90 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = QF4E63V8P9;
 					};
 					5EB50DCD1C6AB69900793E90 = {
 						CreatedOnToolsVersion = 7.2;
@@ -334,12 +332,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E5DB06D1C6D1FC600B99695 /* RoundButton.swift in Sources */,
+				5E4C52851C7A3CBC00A369F2 /* Question.swift in Sources */,
 				5EB50DF51C6AC07600793E90 /* UserData.swift in Sources */,
 				5E5DB06B1C6D1BC600B99695 /* CVC_Globals.swift in Sources */,
 				5E8F4DEA1C6FFEE700BD68FA /* Questions.swift in Sources */,
-				5E8F4DE81C6FFED000BD68FA /* QuestionData.swift in Sources */,
 				5EB50DBD1C6AB69800793E90 /* ViewController.swift in Sources */,
-				5E8F4DEC1C70011400BD68FA /* QuestionData+CoreDataProperties.swift in Sources */,
 				5E5DB0591C6AE83E00B99695 /* LoginVC.swift in Sources */,
 				5E5DB0671C6D0E5100B99695 /* UserSelectionVC.swift in Sources */,
 				5E8F4E2E1C73E9D700BD68FA /* QuestionScrollView.swift in Sources */,
@@ -491,10 +488,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = CVerifyC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = EM.CVerifyC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -502,10 +502,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = CVerifyC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = EM.CVerifyC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

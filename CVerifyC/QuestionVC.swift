@@ -36,6 +36,8 @@ class QuestionVC: UIViewController, UIScrollViewDelegate {
         imgScrollView.resetView()
         brightnessSlider.value = 0.5
         contrastSlider.value = 0.5
+        imgScrollView.changeBrightness(0.5)
+        imgScrollView.changeContrast(0.5)
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "SegueQuestionToHome" {

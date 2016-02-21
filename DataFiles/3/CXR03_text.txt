@@ -1,0 +1,11 @@
+#PROMPT
+Identify aortic knob.
+#ENDPROMPT
+
+#CORRECT_RESPONSE
+Correct.  This patient has prominent aortic knob due partially to rotation, but likely also has a tortuous aorta.
+#ENDCORRECT_RESPONSE
+
+#INCORRECT_RESPONSE
+Incorrect.  The aortic knob is a the superior aspect of the left mediastinal border.  This patient has prominent aortic knob due partially to rotation, but likely also has a tortuous aorta.
+#ENDINCORRECT_RESPONSE

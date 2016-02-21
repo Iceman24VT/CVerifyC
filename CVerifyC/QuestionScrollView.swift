@@ -100,6 +100,8 @@ class QuestionScrollView: UIScrollView, UIScrollViewDelegate {
     func resetView(){
         self.zoomScale = _defaultZoom
         centerScrollViewContents()
+        //changeContrast(0.5)
+        //changeBrightness(0.0)
     }
     
     func centerScrollViewContents() {
@@ -121,7 +123,7 @@ class QuestionScrollView: UIScrollView, UIScrollViewDelegate {
         }
         
         _imgView.frame = contentsFrame
-        _contrastFilter = CIFilter(name: "CISepiaTone")
+        //_contrastFilter = CIFilter(name: "CISepiaTone")
     }
     
     func scrollViewDoubleTapped(recognizer: UITapGestureRecognizer) {
@@ -156,7 +158,7 @@ class QuestionScrollView: UIScrollView, UIScrollViewDelegate {
         print("Single tap, scrollView x:\(pointInScrollView.x) y:\(pointInScrollView.y)")
         
         if _arrowPlaced == false {
-            let arrowImage = UIImage(named: "red-arrow-diagonal")
+            let arrowImage = UIImage(named: "red-arrow-diagonal-trim")
             let arrowFrame = CGRect(x: _arrowPosition!.x, y: _arrowPosition!.y, width: (arrowImage?.size.width)!, height: (arrowImage?.size.height)!)
             _arrowImageView = UIImageView.init(image: arrowImage)
             _arrowImageView!.frame = arrowFrame
@@ -191,8 +193,8 @@ class QuestionScrollView: UIScrollView, UIScrollViewDelegate {
     }
     
     func changeBrightness(newBrightness: Float!) {
-        //_contrastFilter.setValue(newBrightness - 0.5, forKey: kCIInputBrightnessKey)
-        _contrastFilter.setValue(newBrightness - 0.5, forKey: kCIInputSaturationKey)
+        _contrastFilter.setValue(newBrightness - 0.5, forKey: kCIInputBrightnessKey)
+        //_contrastFilter.setValue(newBrightness - 0.5, forKey: kCIInputSaturationKey)
         if let outputImage = _contrastFilter.outputImage {
             let cgimg = _filterContext.createCGImage(outputImage, fromRect: outputImage.extent)
             
