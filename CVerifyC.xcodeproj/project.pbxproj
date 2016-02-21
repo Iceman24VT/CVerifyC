@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5E4C52851C7A3CBC00A369F2 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4C52841C7A3CBC00A369F2 /* Question.swift */; };
+		5E4C52871C7A523F00A369F2 /* RoundLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4C52861C7A523F00A369F2 /* RoundLabel.swift */; };
 		5E5DB0591C6AE83E00B99695 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DB0581C6AE83E00B99695 /* LoginVC.swift */; };
 		5E5DB0671C6D0E5100B99695 /* UserSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DB0661C6D0E5100B99695 /* UserSelectionVC.swift */; };
 		5E5DB0691C6D131A00B99695 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DB0681C6D131A00B99695 /* UserCell.swift */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		5E4C52841C7A3CBC00A369F2 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		5E4C52861C7A523F00A369F2 /* RoundLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundLabel.swift; sourceTree = "<group>"; };
 		5E5DB0581C6AE83E00B99695 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		5E5DB0661C6D0E5100B99695 /* UserSelectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSelectionVC.swift; sourceTree = "<group>"; };
 		5E5DB0681C6D131A00B99695 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				5E5DB0681C6D131A00B99695 /* UserCell.swift */,
 				5E5DB06C1C6D1FC600B99695 /* RoundButton.swift */,
 				5E8F4E2D1C73E9D700BD68FA /* QuestionScrollView.swift */,
+				5E4C52861C7A523F00A369F2 /* RoundLabel.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				5E4C52851C7A3CBC00A369F2 /* Question.swift in Sources */,
 				5EB50DF51C6AC07600793E90 /* UserData.swift in Sources */,
 				5E5DB06B1C6D1BC600B99695 /* CVC_Globals.swift in Sources */,
+				5E4C52871C7A523F00A369F2 /* RoundLabel.swift in Sources */,
 				5E8F4DEA1C6FFEE700BD68FA /* Questions.swift in Sources */,
 				5EB50DBD1C6AB69800793E90 /* ViewController.swift in Sources */,
 				5E5DB0591C6AE83E00B99695 /* LoginVC.swift in Sources */,

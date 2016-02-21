@@ -12,19 +12,42 @@ class QuestionVC: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var imgScrollView: QuestionScrollView!
     @IBOutlet weak var brightnessSlider: UISlider!
     @IBOutlet weak var contrastSlider: UISlider!
+    @IBOutlet weak var fullScreenBtn: UIButton!
+    @IBOutlet weak var communicationLbl: RoundLabel!
+    @IBOutlet weak var promptBtn: UIButton!
+    @IBOutlet weak var submitBtn: RoundButton!
+    
+    enum QuestionMode {
+        case Prompt, UserSelect, AnswerDisplay
+    }
     
     private var _screenSize: CGRect!
-    
+    private var _mode: QuestionMode!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         _screenSize = UIScreen.mainScreen().bounds
-        imgScrollView.delegate = imgScrollView       
+        imgScrollView.delegate = imgScrollView
         let image = questions.getCurrentQuestionImage()
         imgScrollView.setupImage(_screenSize, scrollOrigin: CGPoint(x: 0.0, y: 0.0), scrollImage: image)
+        
+        communicationLbl.hidden = false
+        communicationLbl.text = "\(questions.getCurrentQuestionPrompt())\n[Touch anywhere to continue]"
+        fullScreenBtn.enabled = true
+        promptBtn.hidden = true
+        submitBtn.hidden = true
+        
+        _mode = .Prompt
     }
     
     @IBAction func promptBtnPressed(sender: AnyObject) {
+        if _mode == .UserSelect {
+            communicationLbl.hidden = false
+            fullScreenBtn.enabled = true
+            promptBtn.hidden = true
+            _mode = .Prompt
+        }
     }
     
     @IBAction func homeBtnPressed(sender: AnyObject) {
@@ -45,6 +68,19 @@ class QuestionVC: UIViewController, UIScrollViewDelegate {
         }
     }
 
+    @IBAction func fullScreenBtnPressed(sender: UIButton) {
+        if _mode == .Prompt {
+            communicationLbl.hidden = true
+            fullScreenBtn.enabled = false
+            promptBtn.hidden = false
+            _mode = .UserSelect
+        }
+    }
+    
+    @IBAction func SubmitBtnPressed(sender: AnyObject) {
+        
+    }
+    
     @IBAction func brightnessSliderChanged(sender: UISlider) {
         print("Brightness: \(sender.value)")
         imgScrollView.changeBrightness(sender.value)

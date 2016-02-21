@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -645,29 +646,68 @@
                                     <action selector="resetBtnPressed:" destination="ThP-fs-RN5" eventType="touchUpInside" id="PCB-Zw-ZOk"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="2yF-Q6-lL2" customClass="RoundLabel" customModule="CVerifyC" customModuleProvider="target">
+                                <rect key="frame" x="133" y="205" width="334" height="190"/>
+                                <color key="backgroundColor" red="0.01176470588" green="0.1843137255" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="lOP-dw-fm4"/>
+                                </constraints>
+                                <string key="text">Incorrect.  The carina is the bifurication of the trachea in the main bronchi.  It is at the approximate level of the manubrium. [Touch anywhere to continue]</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RyT-jF-61m" customClass="RoundButton" customModule="CVerifyC" customModuleProvider="target">
+                                <rect key="frame" x="225" y="500" width="150" height="60"/>
+                                <color key="backgroundColor" red="0.039215686270000001" green="0.36862745099999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="SubmitBtnPressed:" destination="ThP-fs-RN5" eventType="touchUpInside" id="fl3-Do-Z3F"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C6i-Hf-3i6">
+                                <rect key="frame" x="229" y="285" width="141" height="30"/>
+                                <connections>
+                                    <action selector="fullScreenBtnPressed:" destination="ThP-fs-RN5" eventType="touchUpInside" id="x9R-bs-dnC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Dxn-Fr-IOs" firstAttribute="leading" secondItem="Y53-Fe-IqE" secondAttribute="leading" id="3QU-sg-Iww"/>
                             <constraint firstAttribute="trailing" secondItem="U9S-RF-6UF" secondAttribute="trailing" constant="20" id="BU8-fI-oI4"/>
                             <constraint firstItem="hoD-A5-T7F" firstAttribute="top" secondItem="c7R-g2-DAB" secondAttribute="bottom" id="Br6-sO-KrX"/>
+                            <constraint firstItem="2yF-Q6-lL2" firstAttribute="centerX" secondItem="Y53-Fe-IqE" secondAttribute="centerX" id="ECI-Uf-Unk"/>
                             <constraint firstAttribute="trailing" secondItem="bc8-8X-J50" secondAttribute="trailing" id="PJY-9i-Pg0"/>
                             <constraint firstAttribute="trailing" secondItem="yyk-y8-Hoq" secondAttribute="trailing" id="Qfl-lJ-gvi"/>
+                            <constraint firstItem="hoD-A5-T7F" firstAttribute="top" secondItem="C6i-Hf-3i6" secondAttribute="bottom" id="QzW-1W-kch"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="C6i-Hf-3i6" secondAttribute="trailing" id="TsZ-UN-WrL"/>
                             <constraint firstItem="bc8-8X-J50" firstAttribute="top" secondItem="Y53-Fe-IqE" secondAttribute="top" id="YDL-Rh-2Vc"/>
+                            <constraint firstItem="C6i-Hf-3i6" firstAttribute="top" secondItem="awp-Rr-g0d" secondAttribute="bottom" id="aTJ-pc-qyi"/>
                             <constraint firstItem="hoD-A5-T7F" firstAttribute="top" secondItem="bc8-8X-J50" secondAttribute="bottom" id="awt-2q-9SW"/>
                             <constraint firstItem="hoD-A5-T7F" firstAttribute="top" secondItem="aLv-hA-0h1" secondAttribute="bottom" id="by3-eW-0L4"/>
                             <constraint firstItem="yyk-y8-Hoq" firstAttribute="top" secondItem="Y53-Fe-IqE" secondAttribute="top" id="em6-is-8jk"/>
+                            <constraint firstItem="2yF-Q6-lL2" firstAttribute="top" secondItem="awp-Rr-g0d" secondAttribute="bottom" constant="185" id="fK0-Xc-5W9"/>
                             <constraint firstItem="aLv-hA-0h1" firstAttribute="top" secondItem="U9S-RF-6UF" secondAttribute="bottom" constant="10" id="hl8-zW-4Lq"/>
+                            <constraint firstItem="2yF-Q6-lL2" firstAttribute="width" secondItem="Y53-Fe-IqE" secondAttribute="width" multiplier="0.6" constant="1" id="kMG-Tg-Uwy"/>
                             <constraint firstItem="c7R-g2-DAB" firstAttribute="leading" secondItem="Y53-Fe-IqE" secondAttribute="leading" id="khZ-Ie-dZG"/>
                             <constraint firstAttribute="trailing" secondItem="aLv-hA-0h1" secondAttribute="trailing" constant="20" id="qV6-tQ-zcc"/>
                             <constraint firstItem="Dxn-Fr-IOs" firstAttribute="top" secondItem="Y53-Fe-IqE" secondAttribute="top" id="txO-6O-VRZ"/>
                             <constraint firstItem="bc8-8X-J50" firstAttribute="leading" secondItem="Y53-Fe-IqE" secondAttribute="leading" id="x3h-Ym-ZJO"/>
+                            <constraint firstItem="C6i-Hf-3i6" firstAttribute="leading" secondItem="Y53-Fe-IqE" secondAttribute="leadingMargin" id="zax-cv-IaJ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="brightnessSlider" destination="U9S-RF-6UF" id="Usk-7c-RHS"/>
+                        <outlet property="communicationLbl" destination="2yF-Q6-lL2" id="cMd-ai-xC0"/>
                         <outlet property="contrastSlider" destination="aLv-hA-0h1" id="dQH-bL-NFM"/>
+                        <outlet property="fullScreenBtn" destination="C6i-Hf-3i6" id="SGz-AG-fU8"/>
                         <outlet property="imgScrollView" destination="bc8-8X-J50" id="3cw-F4-xBU"/>
+                        <outlet property="promptBtn" destination="Dxn-Fr-IOs" id="Ie9-Ua-z3W"/>
+                        <outlet property="submitBtn" destination="RyT-jF-61m" id="LhQ-82-3ez"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="SegueQuestionToHome" id="blz-OA-0uu"/>
                     </connections>
                 </viewController>
