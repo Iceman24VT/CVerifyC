@@ -19,6 +19,7 @@ class QuestionScrollView: UIScrollView, UIScrollViewDelegate {
     private var _contrastFilter: CIFilter!
     private var _brightnessFilter: CIFilter!
     private var _beginImage: CIImage!
+    private var _arrowLocked: Bool!
     
     var arrowPosition: CGPoint? {
         return _arrowPosition
@@ -35,6 +36,7 @@ class QuestionScrollView: UIScrollView, UIScrollViewDelegate {
     func setupImage(scrollFrame: CGRect, scrollOrigin: CGPoint, scrollImage: UIImage) {
         _scrollViewFrame = scrollFrame
         _arrowPlaced = false
+        _arrowLocked = false
         
         self.frame = scrollFrame
         self.bounds = scrollFrame
@@ -152,31 +154,47 @@ class QuestionScrollView: UIScrollView, UIScrollViewDelegate {
     }
     
     func scrollViewSingleTapped(recognizer: UITapGestureRecognizer){
-        _arrowPosition = recognizer.locationInView(_imgView)
+        let newArrowPosition = recognizer.locationInView(_imgView)
         let pointInScrollView = recognizer.locationInView(self)
-        print("Single tap, imageView x:\(_arrowPosition!.x) y:\(_arrowPosition!.y)")
+        print("Single tap, imageView x:\(newArrowPosition.x) y:\(newArrowPosition.y)")
         print("Single tap, scrollView x:\(pointInScrollView.x) y:\(pointInScrollView.y)")
         
         //check to make sure point is on image
-        if _arrowPosition!.y < 0 || _arrowPosition!.y > _imgView.image?.size.height || _arrowPosition!.x < 0 || _arrowPosition!.x > _imgView.image?.size.width{
+        if newArrowPosition.y < 0 || newArrowPosition.y > _imgView.image?.size.height || newArrowPosition.x < 0 || newArrowPosition.x > _imgView.image?.size.width{
             print("Invalid arrow position")
         } else {
             print("Valid arrow position")
             
-            if _arrowPlaced == false {
-                let arrowImage = UIImage(named: "red-arrow-diagonal-trim")
-                let arrowFrame = CGRect(x: _arrowPosition!.x, y: _arrowPosition!.y, width: (arrowImage?.size.width)!, height: (arrowImage?.size.height)!)
-                _arrowImageView = UIImageView.init(image: arrowImage)
-                _arrowImageView!.frame = arrowFrame
-                //self.addSubview(_arrowImageView!)
-                _imgView.addSubview(_arrowImageView!)
+            if(_arrowLocked == false) {
+                _arrowPosition = newArrowPosition
                 
-                _arrowPlaced = true
-            } else {
-                _arrowImageView!.frame.origin.x = _arrowPosition!.x
-                _arrowImageView!.frame.origin.y = _arrowPosition!.y
+                if _arrowPlaced == false {
+                    let arrowImage = UIImage(named: "red-arrow-diagonal-trim")
+                    let arrowFrame = CGRect(x: _arrowPosition!.x, y: _arrowPosition!.y, width: (arrowImage?.size.width)!, height: (arrowImage?.size.height)!)
+                    _arrowImageView = UIImageView.init(image: arrowImage)
+                    _arrowImageView!.frame = arrowFrame
+                    //self.addSubview(_arrowImageView!)
+                    _imgView.addSubview(_arrowImageView!)
+                    
+                    _arrowPlaced = true
+                    
+                    NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "arrowPlaced", object: nil))
+                } else {
+                    _arrowImageView!.frame.origin.x = _arrowPosition!.x
+                    _arrowImageView!.frame.origin.y = _arrowPosition!.y
+                }
             }
         }
+    }
+    
+    func displayMask(maskImage: UIImage) {
+        _arrowLocked = true
+        
+        let maskFrame = CGRect(x: 0, y: 0, width: maskImage.size.width, height: maskImage.size.height)
+        let maskImageView = UIImageView.init(image: maskImage)
+        maskImageView.frame = maskFrame
+        maskImageView.alpha = 0.2
+        _imgView.addSubview(maskImageView)
     }
     
     func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {

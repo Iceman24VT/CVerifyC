@@ -34,15 +34,28 @@ class Questions {
         return _questions[_currentQuestion - 1].prompt
     }
     
+    func getCurrentCorrectResponse() -> String {
+        return _questions[_currentQuestion - 1].correctResponse
+    }
+    
+    func getCurrentIncorrectResponse() -> String {
+        return _questions[_currentQuestion - 1].incorrectResponse
+    }
+    
     func getCurrentQuestionMask() -> UIImage {
         return _questions[_currentQuestion - 1].mask
     }
     
     func currentSubmissionCorrect(submissionPoint: CGPoint) -> Bool {
-        return false
+        if _isPixelTransparentOrWhite(_questions[_currentQuestion - 1].mask, testPoint: submissionPoint) {
+            //if transparent or white then mask failed
+            return false
+        } else {
+            return true
+        }
     }
     
-    func goToNextQuestion () -> Bool{
+    func goToNextQuestion() -> Bool{
         if _currentQuestion < _numberQuestions {
             _currentQuestion = _currentQuestion + 1
             return true
@@ -52,6 +65,26 @@ class Questions {
         }
     }
     
+    private func _isPixelTransparentOrWhite(testImage: UIImage, testPoint: CGPoint) -> Bool{
+        let pixelData = CGDataProviderCopyData(CGImageGetDataProvider(testImage.CGImage))
+        let data: UnsafePointer<UInt8> = CFDataGetBytePtr(pixelData)
+        
+        let pixelInfo: Int = ((Int(testImage.size.width) * Int(testPoint.y)) + Int(testPoint.x)) * 4
+        
+        let alpha = CGFloat(data[pixelInfo+3])
+        let red = CGFloat(data[pixelInfo])
+        let green = CGFloat(data[pixelInfo+1])
+        let blue = CGFloat(data[pixelInfo+2])
+        
+        print("Alpha: \(alpha), red: \(red), green: \(green), blue \(blue)")
+        
+        //check if white or transparent
+        if (red == 255 && green == 255 && blue == 255) || alpha != 255 {
+            return true
+        } else {
+            return false
+        }
+    }
     private func _loadQuestions(){
         var index: Int = 0
         var image: UIImage!
@@ -79,7 +112,7 @@ class Questions {
                 let json = try? NSJSONSerialization.JSONObjectWithData(asset.data, options: NSJSONReadingOptions.AllowFragments)
                 prompt = json!["PROMPT"] as! String
                 correctResponse = json!["CORRECT_RESPONSE"] as! String
-                incorrectResponse = json!["CORRECT_RESPONSE"] as! String
+                incorrectResponse = json!["INCORRECT_RESPONSE"] as! String
             } else {
                 break
             }

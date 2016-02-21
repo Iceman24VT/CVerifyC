@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "CXR01_mask.png",
+      "filename" : "CXR01_mask_trans_red.png",
       "scale" : "1x"
     },
     {
