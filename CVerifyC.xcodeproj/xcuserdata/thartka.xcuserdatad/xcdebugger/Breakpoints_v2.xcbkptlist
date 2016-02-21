@@ -474,11 +474,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CVerifyC/Questions.swift"
-            timestampString = "477773089.831913"
+            timestampString = "477776944.388588"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "getCurrentQuestionImage()"
             landmarkType = "5">
          </BreakpointContent>
@@ -513,6 +513,86 @@
             endingLineNumber = "29"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CVerifyC/Questions.swift"
+            timestampString = "477776944.388588"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "_loadQuestions()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CVerifyC/Questions.swift"
+            timestampString = "477776944.388588"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "_loadQuestions()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CVerifyC/Questions.swift"
+            timestampString = "477776944.388588"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "_loadQuestions()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CVerifyC.Questions.(_loadQuestions in _E7CECF3CB0552751A121FA3CA3F21EE8) (CVerifyC.Questions)() -&gt; ()"
+                  moduleName = "CVerifyC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thartka/Documents/iOS_code/CVerifyC/CVerifyC/Questions.swift"
+                  timestampString = "477775656.790027"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "2733">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CVerifyC.Questions.(_loadQuestions in _E7CECF3CB0552751A121FA3CA3F21EE8) (CVerifyC.Questions)() -&gt; ()"
+                  moduleName = "CVerifyC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thartka/Documents/iOS_code/CVerifyC/CVerifyC/Questions.swift"
+                  timestampString = "477775656.790245"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "2745">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -20,8 +20,8 @@ class QuestionVC: UIViewController, UIScrollViewDelegate {
         
         _screenSize = UIScreen.mainScreen().bounds
         imgScrollView.delegate = imgScrollView       
-        let image = UIImage(named: "normal_CXR_lrg")
-        imgScrollView.setupImage(_screenSize, scrollOrigin: CGPoint(x: 0.0, y: 0.0), scrollImage: image!)
+        let image = questions.getCurrentQuestionImage()
+        imgScrollView.setupImage(_screenSize, scrollOrigin: CGPoint(x: 0.0, y: 0.0), scrollImage: image)
     }
     
     @IBAction func promptBtnPressed(sender: AnyObject) {

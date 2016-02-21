@@ -19,4 +19,12 @@ class Question {
     init(){
         
     }
+    
+    init(image: UIImage, mask: UIImage, prompt: String, correctResponse: String, incorrectResponse: String){
+        self.image = image
+        self.mask = mask
+        self.prompt = prompt
+        self.correctResponse = correctResponse
+        self.incorrectResponse = incorrectResponse
+    }
 }

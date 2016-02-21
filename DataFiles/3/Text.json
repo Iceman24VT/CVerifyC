@@ -1,0 +1,5 @@
+{
+  "PROMPT": "Identify aortic knob.",
+  "CORRECT_RESPONSE": "Correct.  This patient has prominent aortic knob due partially to rotation, but likely also has a tortuous aorta.",
+  "INCORRECT_RESPONSE": "Incorrect.  The aortic knob is a the superior aspect of the left mediastinal border.  This patient has prominent aortic knob due partially to rotation, but likely also has a tortuous aorta."
+}
