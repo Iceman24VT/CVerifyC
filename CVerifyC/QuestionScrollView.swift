@@ -157,18 +157,25 @@ class QuestionScrollView: UIScrollView, UIScrollViewDelegate {
         print("Single tap, imageView x:\(_arrowPosition!.x) y:\(_arrowPosition!.y)")
         print("Single tap, scrollView x:\(pointInScrollView.x) y:\(pointInScrollView.y)")
         
-        if _arrowPlaced == false {
-            let arrowImage = UIImage(named: "red-arrow-diagonal-trim")
-            let arrowFrame = CGRect(x: _arrowPosition!.x, y: _arrowPosition!.y, width: (arrowImage?.size.width)!, height: (arrowImage?.size.height)!)
-            _arrowImageView = UIImageView.init(image: arrowImage)
-            _arrowImageView!.frame = arrowFrame
-            //self.addSubview(_arrowImageView!)
-            _imgView.addSubview(_arrowImageView!)
-            
-            _arrowPlaced = true
+        //check to make sure point is on image
+        if _arrowPosition!.y < 0 || _arrowPosition!.y > _imgView.image?.size.height || _arrowPosition!.x < 0 || _arrowPosition!.x > _imgView.image?.size.width{
+            print("Invalid arrow position")
         } else {
-            _arrowImageView!.frame.origin.x = _arrowPosition!.x
-            _arrowImageView!.frame.origin.y = _arrowPosition!.y
+            print("Valid arrow position")
+            
+            if _arrowPlaced == false {
+                let arrowImage = UIImage(named: "red-arrow-diagonal-trim")
+                let arrowFrame = CGRect(x: _arrowPosition!.x, y: _arrowPosition!.y, width: (arrowImage?.size.width)!, height: (arrowImage?.size.height)!)
+                _arrowImageView = UIImageView.init(image: arrowImage)
+                _arrowImageView!.frame = arrowFrame
+                //self.addSubview(_arrowImageView!)
+                _imgView.addSubview(_arrowImageView!)
+                
+                _arrowPlaced = true
+            } else {
+                _arrowImageView!.frame.origin.x = _arrowPosition!.x
+                _arrowImageView!.frame.origin.y = _arrowPosition!.y
+            }
         }
     }
     
