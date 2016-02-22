@@ -10,26 +10,38 @@ import UIKit
 
 class QuestionTitleVC: UIViewController {
 
+    @IBOutlet weak var QuestionTitleLbl: UILabel!
+    
+    let TRANSITION_TIME:NSTimeInterval = 1.5
+    
+    var timer: NSTimer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        QuestionTitleLbl.text = "Question \(questions.getCurrentQuestionNumber())"
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewDidAppear(animated: Bool) {
+        QuestionTitleLbl.text = "Question \(questions.getCurrentQuestionNumber())"
+        
+        //set up timer
+        startTimer()
     }
-    */
 
+    func startTimer(){
+        if timer != nil{
+            timer.invalidate()
+        }
+        
+        timer = NSTimer.scheduledTimerWithTimeInterval(TRANSITION_TIME, target: self, selector: "transitionToQuestion", userInfo: nil, repeats: true)
+    }
+    
+    func transitionToQuestion(){
+        performSegueWithIdentifier("SegueTitleToQuestion", sender: nil)        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+
+    }
 }

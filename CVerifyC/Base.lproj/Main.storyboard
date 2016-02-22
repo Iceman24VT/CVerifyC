@@ -146,7 +146,7 @@
                         <outlet property="userNameLbl" destination="d25-F5-Mp3" id="Ke1-nN-7QI"/>
                         <segue destination="8ra-Fz-z77" kind="show" identifier="SegueHomeToLogin" id="OcD-Ax-8rr"/>
                         <segue destination="s0M-6A-8oy" kind="show" identifier="SegueHomeToUserSelection" id="cnb-Uf-5gS"/>
-                        <segue destination="ThP-fs-RN5" kind="show" identifier="SegueHomeToQuestion" id="KNB-Gx-DT4"/>
+                        <segue destination="rfN-CK-Jnb" kind="show" identifier="SegueHomeToQuestionTitle" id="9YI-Bp-gRD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -211,12 +211,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" id="43j-H7-gNP"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="SegueCompleteToHome" id="43j-H7-gNP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J05-7u-J7e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="420" y="1974"/>
+            <point key="canvasLocation" x="364" y="2726"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="9VR-ns-Jsz">
@@ -634,6 +634,68 @@
             </objects>
             <point key="canvasLocation" x="1370" y="451"/>
         </scene>
+        <!--Question TitleVC-->
+        <scene sceneID="uRL-N3-WCW">
+            <objects>
+                <viewController id="rfN-CK-Jnb" customClass="QuestionTitleVC" customModule="CVerifyC" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qsx-jm-aP0"/>
+                        <viewControllerLayoutGuide type="bottom" id="bhy-hg-0Up"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bJQ-ya-SLy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JFg-D9-i3H">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="117"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="CVerifyC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcN-U0-0jb">
+                                        <rect key="frame" x="199" y="36" width="202" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="Ah4-5d-Qfm"/>
+                                            <constraint firstAttribute="width" constant="202" id="ZFc-JY-YHk"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="41"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.01176470588" green="0.1843137255" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="xcN-U0-0jb" firstAttribute="centerY" secondItem="JFg-D9-i3H" secondAttribute="centerY" id="QEe-2i-6PJ"/>
+                                    <constraint firstAttribute="height" constant="117" id="V0H-gQ-uBU"/>
+                                    <constraint firstItem="xcN-U0-0jb" firstAttribute="centerX" secondItem="JFg-D9-i3H" secondAttribute="centerX" id="pJX-8N-vHS"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Question XXX" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fsr-yi-oB6">
+                                <rect key="frame" x="106" y="256" width="389" height="99"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="389" id="aVo-ex-6Jo"/>
+                                    <constraint firstAttribute="height" constant="99" id="iaw-QV-ykU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="57"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="JFg-D9-i3H" secondAttribute="trailing" id="MUc-Ls-Mm3"/>
+                            <constraint firstItem="JFg-D9-i3H" firstAttribute="leading" secondItem="bJQ-ya-SLy" secondAttribute="leading" id="RGM-9o-u9p"/>
+                            <constraint firstItem="fsr-yi-oB6" firstAttribute="centerX" secondItem="bJQ-ya-SLy" secondAttribute="centerX" id="T3I-1c-VRf"/>
+                            <constraint firstItem="JFg-D9-i3H" firstAttribute="top" secondItem="bJQ-ya-SLy" secondAttribute="top" id="hpI-UY-uAy"/>
+                            <constraint firstItem="fsr-yi-oB6" firstAttribute="top" secondItem="JFg-D9-i3H" secondAttribute="bottom" constant="140" id="ruY-1R-2mh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="QuestionTitleLbl" destination="fsr-yi-oB6" id="LY5-a5-69w"/>
+                        <segue destination="ThP-fs-RN5" kind="show" identifier="SegueTitleToQuestion" id="3OW-eC-f5h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GvX-GC-wXt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1395" y="1972"/>
+        </scene>
         <!--QuestionVC-->
         <scene sceneID="waB-GD-aPu">
             <objects>
@@ -805,7 +867,7 @@
                 <tapGestureRecognizer id="1Wb-8O-BBF"/>
                 <tapGestureRecognizer id="rWu-QH-oya"/>
             </objects>
-            <point key="canvasLocation" x="1375" y="1983"/>
+            <point key="canvasLocation" x="2351" y="1974"/>
         </scene>
     </scenes>
     <resources>

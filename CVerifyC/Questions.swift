@@ -33,6 +33,10 @@ class Questions {
     func getCurrentQuestionPrompt() -> String {
         return _questions[_currentQuestion - 1].prompt
     }
+
+    func getCurrentQuestionNumber() -> Int {
+        return _currentQuestion
+    }
     
     func getCurrentCorrectResponse() -> String {
         return _questions[_currentQuestion - 1].correctResponse

@@ -30,6 +30,7 @@ class Users  {
     }
     
     var userList: [UserData]? {
+        self.loadUserList()
         return _users
     }
     

@@ -65,6 +65,12 @@ class QuestionVC: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func homeBtnPressed(sender: AnyObject) {
+        if _mode == .AnswerDisplay {
+            if questions.goToNextQuestion() == false {
+                performSegueWithIdentifier("SegueQuestionToComplete", sender: nil)
+            }
+        }
+        
         //segue back to main screen
         performSegueWithIdentifier("SegueQuestionToHome", sender: nil)
     }

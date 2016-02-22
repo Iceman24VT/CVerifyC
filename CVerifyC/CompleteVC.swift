@@ -20,4 +20,8 @@ class CompleteVC: UIViewController {
     @IBAction func homeBtnPressed(sender: AnyObject) {
         performSegueWithIdentifier("SegueCompleteToHome", sender: nil)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+
+    }
 }

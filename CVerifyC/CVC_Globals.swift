@@ -10,3 +10,8 @@ import Foundation
 
 var users: Users!
 var questions: Questions!
+var metrics: Metrics!
+
+enum QuestionStatus {
+    case correct, incorrect, incomplete
+}

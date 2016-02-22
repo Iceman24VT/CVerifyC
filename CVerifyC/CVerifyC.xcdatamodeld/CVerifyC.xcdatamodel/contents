@@ -9,7 +9,14 @@
         <attribute name="trainingLevel" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userId" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="UserMetrics" representedClassName=".UserMetrics" syncable="YES">
+        <attribute name="iteration" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="questionCorrect" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="questionNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="UserData" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="UserMetrics" positionX="-63" positionY="36" width="128" height="105"/>
     </elements>
 </model>

@@ -195,6 +195,7 @@ class QuestionScrollView: UIScrollView, UIScrollViewDelegate {
         maskImageView.frame = maskFrame
         maskImageView.alpha = 0.2
         _imgView.addSubview(maskImageView)
+        resetView()
     }
     
     func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {

@@ -10,6 +10,10 @@
 		5E4C52851C7A3CBC00A369F2 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4C52841C7A3CBC00A369F2 /* Question.swift */; };
 		5E4C52871C7A523F00A369F2 /* RoundLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4C52861C7A523F00A369F2 /* RoundLabel.swift */; };
 		5E4C52891C7A780700A369F2 /* CompleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4C52881C7A780700A369F2 /* CompleteVC.swift */; };
+		5E4C528B1C7A7B3600A369F2 /* QuestionTitleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4C528A1C7A7B3600A369F2 /* QuestionTitleVC.swift */; };
+		5E4C528F1C7A90DA00A369F2 /* UserMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4C528D1C7A90DA00A369F2 /* UserMetrics.swift */; };
+		5E4C52911C7A914800A369F2 /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4C52901C7A914800A369F2 /* Metrics.swift */; };
+		5E4C52931C7A948D00A369F2 /* UserMetrics+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4C52921C7A948D00A369F2 /* UserMetrics+CoreDataProperties.swift */; };
 		5E5DB0591C6AE83E00B99695 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DB0581C6AE83E00B99695 /* LoginVC.swift */; };
 		5E5DB0671C6D0E5100B99695 /* UserSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DB0661C6D0E5100B99695 /* UserSelectionVC.swift */; };
 		5E5DB0691C6D131A00B99695 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DB0681C6D131A00B99695 /* UserCell.swift */; };
@@ -53,6 +57,10 @@
 		5E4C52841C7A3CBC00A369F2 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		5E4C52861C7A523F00A369F2 /* RoundLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundLabel.swift; sourceTree = "<group>"; };
 		5E4C52881C7A780700A369F2 /* CompleteVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompleteVC.swift; sourceTree = "<group>"; };
+		5E4C528A1C7A7B3600A369F2 /* QuestionTitleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionTitleVC.swift; sourceTree = "<group>"; };
+		5E4C528D1C7A90DA00A369F2 /* UserMetrics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserMetrics.swift; path = ../UserMetrics.swift; sourceTree = "<group>"; };
+		5E4C52901C7A914800A369F2 /* Metrics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
+		5E4C52921C7A948D00A369F2 /* UserMetrics+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UserMetrics+CoreDataProperties.swift"; path = "../UserMetrics+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5E5DB0581C6AE83E00B99695 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		5E5DB0661C6D0E5100B99695 /* UserSelectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSelectionVC.swift; sourceTree = "<group>"; };
 		5E5DB0681C6D131A00B99695 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
@@ -164,10 +172,14 @@
 		5EB50DEB1C6AB6A700793E90 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5E4C52921C7A948D00A369F2 /* UserMetrics+CoreDataProperties.swift */,
+				5E4C528D1C7A90DA00A369F2 /* UserMetrics.swift */,
+				5E8F4DE91C6FFEE700BD68FA /* Questions.swift */,
 				5EB50DF31C6AC07600793E90 /* UserData.swift */,
 				5E8F4DD71C6D991C00BD68FA /* UserData+CoreDataProperties.swift */,
 				5E8F4DD91C6EC5B400BD68FA /* Users.swift */,
 				5E4C52841C7A3CBC00A369F2 /* Question.swift */,
+				5E4C52901C7A914800A369F2 /* Metrics.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -178,7 +190,6 @@
 				5E5DB0681C6D131A00B99695 /* UserCell.swift */,
 				5E5DB06C1C6D1FC600B99695 /* RoundButton.swift */,
 				5E8F4E2D1C73E9D700BD68FA /* QuestionScrollView.swift */,
-				5E8F4DE91C6FFEE700BD68FA /* Questions.swift */,
 				5E4C52861C7A523F00A369F2 /* RoundLabel.swift */,
 			);
 			name = View;
@@ -192,6 +203,7 @@
 				5E5DB0661C6D0E5100B99695 /* UserSelectionVC.swift */,
 				5E8F4DEE1C701EB900BD68FA /* QuestionVC.swift */,
 				5E4C52881C7A780700A369F2 /* CompleteVC.swift */,
+				5E4C528A1C7A7B3600A369F2 /* QuestionTitleVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -343,14 +355,18 @@
 				5E5DB06B1C6D1BC600B99695 /* CVC_Globals.swift in Sources */,
 				5E4C52871C7A523F00A369F2 /* RoundLabel.swift in Sources */,
 				5E4C52891C7A780700A369F2 /* CompleteVC.swift in Sources */,
+				5E4C52931C7A948D00A369F2 /* UserMetrics+CoreDataProperties.swift in Sources */,
 				5E8F4DEA1C6FFEE700BD68FA /* Questions.swift in Sources */,
+				5E4C528F1C7A90DA00A369F2 /* UserMetrics.swift in Sources */,
 				5EB50DBD1C6AB69800793E90 /* ViewController.swift in Sources */,
 				5E5DB0591C6AE83E00B99695 /* LoginVC.swift in Sources */,
 				5E5DB0671C6D0E5100B99695 /* UserSelectionVC.swift in Sources */,
 				5E8F4E2E1C73E9D700BD68FA /* QuestionScrollView.swift in Sources */,
+				5E4C52911C7A914800A369F2 /* Metrics.swift in Sources */,
 				5E8F4DDA1C6EC5B400BD68FA /* Users.swift in Sources */,
 				5EB50DC31C6AB69800793E90 /* CVerifyC.xcdatamodeld in Sources */,
 				5EB50DF11C6AB77600793E90 /* CVC_Constants.swift in Sources */,
+				5E4C528B1C7A7B3600A369F2 /* QuestionTitleVC.swift in Sources */,
 				5E8F4DEF1C701EB900BD68FA /* QuestionVC.swift in Sources */,
 				5E8F4DD81C6D991C00BD68FA /* UserData+CoreDataProperties.swift in Sources */,
 				5E5DB0691C6D131A00B99695 /* UserCell.swift in Sources */,

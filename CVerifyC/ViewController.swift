@@ -24,8 +24,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         //initialize and find currentUser
-        users = Users.init()
-        questions = Questions.init()
+        if users == nil {
+            users = Users.init()
+        }
+        if questions == nil {
+            questions = Questions.init()
+        }
+        if metrics == nil {
+            metrics = Metrics.init()
+        }
         
         //check for there are registered users, if not set defaults User and inactivate tutorial
         // and training buttons; else activate buttons
@@ -67,7 +74,7 @@ class ViewController: UIViewController {
     
     @IBAction func startTrainingBtnPressed(sender: AnyObject) {
         if _userSelected == true {
-            performSegueWithIdentifier("SegueHomeToQuestion", sender: nil)
+            performSegueWithIdentifier("SegueHomeToQuestionTitle", sender: nil)
         }
     }
     

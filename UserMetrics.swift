@@ -12,6 +12,4 @@ import CoreData
 
 class UserMetrics: NSManagedObject {
 
-// Insert code here to add functionality to your managed object subclass
-
 }
