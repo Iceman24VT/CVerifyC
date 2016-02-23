@@ -26,6 +26,10 @@ class Questions {
         return _questions[questionNumber - 1].image
     }
     
+    func getTotalNumberOfQuestions() -> Int {
+        return _numberQuestions
+    }
+    
     func getCurrentQuestionImage() -> UIImage {
         return _questions[_currentQuestion - 1].image
     }
@@ -56,6 +60,25 @@ class Questions {
             return false
         } else {
             return true
+        }
+    }
+    
+    func findNextQuestion(userId: String, iterationNum: NSNumber) -> Bool{
+        let iteration = Int(iterationNum)
+        let lastAnswered = metrics.getLastAnsweredQuestion(userId, iteration: iteration)
+        let firstWrong = metrics.getFirstWrongQuestion(userId, iteration: iteration)
+        
+        metrics.printUserMetrics(userId)
+        
+        if lastAnswered < _numberQuestions {
+            _currentQuestion = lastAnswered + 1
+            return true
+        }  else if firstWrong <= _numberQuestions {
+            _currentQuestion = firstWrong
+            return true
+        } else {
+            _currentQuestion = 1
+            return false
         }
     }
     

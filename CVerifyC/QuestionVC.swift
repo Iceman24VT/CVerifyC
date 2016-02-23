@@ -16,8 +16,8 @@ class QuestionVC: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var communicationLbl: RoundLabel!
     @IBOutlet weak var promptBtn: UIButton!
     @IBOutlet weak var submitBtn: RoundButton!
-    
     @IBOutlet weak var nextQuestionBtn: RoundButton!
+    
     enum QuestionMode {
         case Prompt, UserSelect, AnswerDisplay
     }
@@ -66,7 +66,7 @@ class QuestionVC: UIViewController, UIScrollViewDelegate {
     
     @IBAction func homeBtnPressed(sender: AnyObject) {
         if _mode == .AnswerDisplay {
-            if questions.goToNextQuestion() == false {
+            if checkForNextQuestion() == false {
                 performSegueWithIdentifier("SegueQuestionToComplete", sender: nil)
             }
         }
@@ -103,13 +103,16 @@ class QuestionVC: UIViewController, UIScrollViewDelegate {
     
     @IBAction func SubmitBtnPressed(sender: AnyObject) {
         submitBtn.hidden = false
+        var answerCorrect: QuestionStatus!
         
         if questions.currentSubmissionCorrect(imgScrollView.arrowPosition!) {
             print("Correct submission")
             communicationLbl.text = "\(questions.getCurrentCorrectResponse())\n\n[Touch anywhere to dismiss this window]"
+            answerCorrect = .correct
         } else {
             print("Incorrect submission")
             communicationLbl.text = "\(questions.getCurrentIncorrectResponse())\n\n[Touch anywhere to dismiss this window]"
+            answerCorrect = .incorrect
         }
         
         imgScrollView.displayMask(questions.getCurrentQuestionMask())
@@ -118,12 +121,17 @@ class QuestionVC: UIViewController, UIScrollViewDelegate {
         submitBtn.hidden = true
         fullScreenBtn.enabled = true
         nextQuestionBtn.hidden = false
+
+        metrics.addUserMetric(users.currentUser!.userId!, question: Int32(questions.getCurrentQuestionNumber()), correct: answerCorrect, iteration: Int(users.currentUser!.iteration!))
+        
+        let newPercentComplete = metrics.getPercentFinishedForUserIdSession(users.currentUser!.userId!, iteration: users.currentUser!.iteration!)
+        users.updateCurrentPercentComplete(newPercentComplete)
         
         _mode = .AnswerDisplay
     }
     
     @IBAction func nextQuestionBtnPressed(sender: AnyObject) {
-        if questions.goToNextQuestion() == true {
+        if checkForNextQuestion() == true {
             dismissViewControllerAnimated(true, completion: nil)
         } else {
             performSegueWithIdentifier("SegueQuestionToComplete", sender: nil)
@@ -138,5 +146,11 @@ class QuestionVC: UIViewController, UIScrollViewDelegate {
     @IBAction func contrastSliderChanged(sender: UISlider) {
         print("Contrast: \(sender.value)")
         imgScrollView.changeContrast(sender.value)
+    }
+    
+    func checkForNextQuestion() -> Bool {
+        let nextQuestion = questions.findNextQuestion((users.currentUser?.userId)!, iterationNum: (users.currentUser?.iteration)!)
+        
+        return nextQuestion
     }
 }

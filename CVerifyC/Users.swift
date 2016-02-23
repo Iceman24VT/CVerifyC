@@ -12,6 +12,7 @@ import UIKit
 
 class Users  {
     private var _currentUserData: UserData!
+    private var _currentUserIndex: Int!
     private var _app: AppDelegate!
     private var _context: NSManagedObjectContext!
     
@@ -40,6 +41,7 @@ class Users  {
     
     func setCurrentUser(newCurrentUser: UserData) {
         _currentUserData = newCurrentUser
+        _currentUserIndex = getIndexForUserId(newCurrentUser.userId!)
         newCurrentUser.currentUser = true
         clearAllOtherCurrentUsers(newCurrentUser.userId!)
         setUserList()
@@ -64,8 +66,23 @@ class Users  {
     func printUsers(){
         print("Printing all users:")
         for user in _users {
-            print("User: \(user.firstName!) \(user.lastName!) Active:\(user.currentUser!)")
+            print("User: \(user.firstName!) \(user.lastName!) Active:\(user.currentUser!) Percent Compete: \(user.completionPercent) Iteration:\(user.iteration)")
         }
+    }
+    
+    func updateCurrentPercentComplete(newPercentComplete: Double) {
+        //printUsers()
+        //print("New completion percent: \(newPercentComplete)")
+        
+        _users[_currentUserIndex].completionPercent = newPercentComplete
+        setUserList()
+        //printUsers()
+    }
+    
+    func incrementCurrentIteration(){
+        let currentIteration = _users[_currentUserIndex].iteration! as Int
+        _users[_currentUserIndex].iteration =  NSNumber(int: currentIteration + 1)
+        setUserList()
     }
     
     private func addUser(user: UserData){
@@ -89,6 +106,7 @@ class Users  {
         userEntity.trainingLevel = trainingLevel
         userEntity.completionPercent = percentComplete
         userEntity.currentUser = currentUser
+        userEntity.iteration = 1
         userEntity.userId = NSUUID().UUIDString
         
         _context.insertObject(userEntity)
@@ -115,6 +133,8 @@ class Users  {
         } catch {
             print("Could not save user")
         }
+        
+        loadUserList()
     }
     
     private func findCurrentUser() -> UserData? {
@@ -122,6 +142,7 @@ class Users  {
             print("User last name: \(user.lastName)")
             if user.currentUser == true {
                 _currentUserData = user
+                _currentUserIndex = getIndexForUserId(_currentUserData.userId!)
                 print("Found current user")
                 return user
             }
@@ -142,5 +163,16 @@ class Users  {
                 user.currentUser = true
             }
         }
+    }
+    
+    private func getIndexForUserId(userId: String) -> Int {
+        for var x = 0; x < _users.count; x++ {
+            if _users[x].userId == userId {
+                return x
+            }
+        }
+        
+        print("Error finding index")
+        return -1
     }
 }

@@ -11,11 +11,11 @@ import CoreData
 
 
 class UserData: NSManagedObject {
-    func getPercentCompleteInt() -> Int? {
+    func getPercentCompleteInt() -> Int! {
         var percentCompleteInt: Int!
         
         if let percentComplete = self.completionPercent where self.completionPercent != 0{
-            percentCompleteInt = Int((percentComplete.doubleValue * 100.0)%1)
+            percentCompleteInt = Int(percentComplete.doubleValue * 100.0)
             
         } else {
             percentCompleteInt = 0
@@ -25,6 +25,7 @@ class UserData: NSManagedObject {
     }
     
     func setToUser(newData: UserData){
+        self.iteration = newData.iteration
         self.firstName = newData.firstName
         self.lastName = newData.lastName
         self.userId = newData.userId

@@ -5,6 +5,7 @@
         <attribute name="currentUser" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="institution" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iteration" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="trainingLevel" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userId" optional="YES" attributeType="String" syncable="YES"/>
@@ -16,7 +17,7 @@
         <attribute name="userId" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="UserData" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="UserData" positionX="-63" positionY="-18" width="128" height="165"/>
         <element name="UserMetrics" positionX="-63" positionY="36" width="128" height="105"/>
     </elements>
 </model>

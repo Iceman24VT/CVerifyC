@@ -74,6 +74,11 @@ class ViewController: UIViewController {
     
     @IBAction func startTrainingBtnPressed(sender: AnyObject) {
         if _userSelected == true {
+            if users.currentUser!.getPercentCompleteInt() == 100 {
+                users.incrementCurrentIteration()
+            }
+            
+            questions.findNextQuestion((users.currentUser?.userId)!, iterationNum: (users.currentUser?.iteration)!)
             performSegueWithIdentifier("SegueHomeToQuestionTitle", sender: nil)
         }
     }
@@ -91,7 +96,17 @@ class ViewController: UIViewController {
     func updateVCUserSelected() {
         //update user info
         userNameLbl.text = "User: \(users.currentUser!.firstName!.capitalizedString) \(users!.currentUser!.lastName!.capitalizedString)"
-        percentTrainingCompletedLbl.text = "\(users.currentUser!.completionPercent!)% Complete"
+        percentTrainingCompletedLbl.text = "\(users.currentUser!.getPercentCompleteInt())% Complete"
+        
+        if metrics.userAnsweredAnyQuestions(users.currentUser!.userId!) {
+            if users.currentUser!.getPercentCompleteInt() == 100 {
+                startTrainingBtn.setTitle("Repeat training session", forState: .Normal)
+            } else {
+                startTrainingBtn.setTitle("Continue training session", forState: .Normal)
+            }
+        } else {
+            startTrainingBtn.setTitle("Start training session", forState: .Normal)
+        }
         
         //activate buttons
         addUser_changeUserBtn.setTitle("Change User", forState: .Normal)
