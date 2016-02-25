@@ -70,6 +70,9 @@ class ViewController: UIViewController {
     }
 
     @IBAction func startTutorialBtnPressed(sender: AnyObject) {
+        if _userSelected! {
+            performSegueWithIdentifier("SegueHomeToTutorial", sender: nil)
+        }
     }
     
     @IBAction func startTrainingBtnPressed(sender: AnyObject) {
@@ -110,8 +113,8 @@ class ViewController: UIViewController {
         
         //activate buttons
         addUser_changeUserBtn.setTitle("Change User", forState: .Normal)
-        startTutorialBtn.alpha = 0.5
-        startTutorialBtn.enabled = false
+        startTutorialBtn.alpha = 1.0
+        startTutorialBtn.enabled = true
         startTrainingBtn.alpha = 1.0
         startTrainingBtn.enabled = true
     }
