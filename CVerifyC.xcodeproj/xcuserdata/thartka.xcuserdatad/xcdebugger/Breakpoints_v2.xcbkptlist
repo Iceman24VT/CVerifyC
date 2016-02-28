@@ -634,11 +634,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CVerifyC/Users.swift"
-            timestampString = "477806140.59687"
+            timestampString = "478391725.977243"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "addUser(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -650,12 +650,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CVerifyC/Users.swift"
-            timestampString = "477806140.59687"
+            timestampString = "478391725.977243"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
-            landmarkName = "addUser(_:lastName:institution:trainingLevel:percentComplete:currentUser:)"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "addUser(_:lastName:institution:trainingLevel:percentComplete:currentUser:tutorialComplete:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

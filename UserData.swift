@@ -33,5 +33,6 @@ class UserData: NSManagedObject {
         self.institution = newData.institution
         self.trainingLevel = newData.trainingLevel
         self.completionPercent = newData.completionPercent
+        self.tutorialComplete = newData.tutorialComplete
     }
 }

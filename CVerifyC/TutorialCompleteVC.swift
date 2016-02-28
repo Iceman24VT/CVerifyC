@@ -16,6 +16,7 @@ class TutorialCompleteVC: UIViewController {
     }
     
     @IBAction func anywhereBtnPressed(sender: AnyObject) {
+        users.tutorialCompleted()
         print("Tutorial complete")
     }
     

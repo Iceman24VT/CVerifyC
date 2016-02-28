@@ -111,12 +111,18 @@ class ViewController: UIViewController {
             startTrainingBtn.setTitle("Start training session", forState: .Normal)
         }
         
+        if users.currentUser!.tutorialComplete == false {
+            startTrainingBtn.alpha = 0.5
+            startTrainingBtn.enabled = false
+        } else {
+            startTrainingBtn.alpha = 1.0
+            startTrainingBtn.enabled = true
+        }
+        
         //activate buttons
         addUser_changeUserBtn.setTitle("Change User", forState: .Normal)
         startTutorialBtn.alpha = 1.0
         startTutorialBtn.enabled = true
-        startTrainingBtn.alpha = 1.0
-        startTrainingBtn.enabled = true
     }
     
     func updateVCUserNotSelected() {

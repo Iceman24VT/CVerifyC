@@ -55,7 +55,7 @@ class Users  {
     func addUserAndSetAsCurrent(firstName: String, lastName: String, institution: String, trainingLevel: String, percentComplete: NSNumber, currentUser: Bool) {
         
         var newUser: UserData!
-        newUser = addUser(firstName, lastName: lastName, institution: institution, trainingLevel: trainingLevel, percentComplete: percentComplete, currentUser: true)
+        newUser = addUser(firstName, lastName: lastName, institution: institution, trainingLevel: trainingLevel, percentComplete: percentComplete, currentUser: true, tutorialComplete: false)
         setCurrentUser(newUser)
     }
     
@@ -66,7 +66,7 @@ class Users  {
     func printUsers(){
         print("Printing all users:")
         for user in _users {
-            print("User: \(user.firstName!) \(user.lastName!) Active:\(user.currentUser!) Percent Compete: \(user.completionPercent) Iteration:\(user.iteration)")
+            print("User: \(user.firstName!) \(user.lastName!) Active:\(user.currentUser!) Percent Compete: \(user.completionPercent) Iteration:\(user.iteration) Tutorial:\(user.tutorialComplete)")
         }
     }
     
@@ -85,6 +85,11 @@ class Users  {
         setUserList()
     }
     
+    func tutorialCompleted(){
+        _users[_currentUserIndex].tutorialComplete =  true
+        setUserList()
+    }
+    
     private func addUser(user: UserData){
         let entity = NSEntityDescription.entityForName("UserData", inManagedObjectContext: _context)!
         let userEntity = UserData(entity: entity, insertIntoManagedObjectContext: _context)
@@ -96,7 +101,7 @@ class Users  {
         setUserList()
     }
     
-    private func addUser(firstName: String, lastName: String, institution: String, trainingLevel: String, percentComplete: NSNumber, currentUser: Bool) -> UserData {
+    private func addUser(firstName: String, lastName: String, institution: String, trainingLevel: String, percentComplete: NSNumber, currentUser: Bool, tutorialComplete: Bool) -> UserData {
         let entity = NSEntityDescription.entityForName("UserData", inManagedObjectContext: _context)!
         let userEntity = UserData(entity: entity, insertIntoManagedObjectContext: _context)
         
@@ -108,6 +113,7 @@ class Users  {
         userEntity.currentUser = currentUser
         userEntity.iteration = 1
         userEntity.userId = NSUUID().UUIDString
+        userEntity.tutorialComplete = tutorialComplete
         
         _context.insertObject(userEntity)
         
