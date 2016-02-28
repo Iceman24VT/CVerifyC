@@ -1899,7 +1899,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9BL-AZ-Aw8">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <connections>
-                                    <segue destination="yJq-wI-VZQ" kind="show" id="KqD-Ne-LFU"/>
+                                    <segue destination="RT1-Cr-h0P" kind="show" id="WpY-Yu-qPJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1969,24 +1969,89 @@
             </objects>
             <point key="canvasLocation" x="9607" y="1360"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="R9L-MU-L4j">
+        <!--Tutorial11-->
+        <scene sceneID="L2n-1c-e2T">
             <objects>
-                <viewController id="yJq-wI-VZQ" sceneMemberID="viewController">
+                <viewController title="Tutorial11" id="RT1-Cr-h0P" customClass="TutorialCompleteVC" customModule="CVerifyC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="h9y-4P-hfk"/>
-                        <viewControllerLayoutGuide type="bottom" id="KKA-73-tlp"/>
+                        <viewControllerLayoutGuide type="top" id="UbL-fl-bzT"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ig8-YJ-HjG"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="n5E-BA-hVb">
+                    <view key="view" contentMode="scaleToFill" id="VAT-or-XBR">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ses-9K-dRy">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="116"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tutorial" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPF-Cv-wYk">
+                                        <rect key="frame" x="283" y="36" width="202" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="dfG-Cn-5cm"/>
+                                            <constraint firstAttribute="width" constant="202" id="t8p-sL-esw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="41"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.01176470588" green="0.1843137255" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="117" id="g5P-hA-mGV"/>
+                                    <constraint firstItem="wPF-Cv-wYk" firstAttribute="centerX" secondItem="Ses-9K-dRy" secondAttribute="centerX" id="lRX-Uc-JWk"/>
+                                    <constraint firstItem="wPF-Cv-wYk" firstAttribute="centerY" secondItem="Ses-9K-dRy" secondAttribute="centerY" id="mNo-4X-oOw"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="116" id="oBu-bN-Hss"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpe-2k-aJb">
+                                <rect key="frame" x="68" y="194" width="632" height="443"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="632" id="DMw-CS-Zq9"/>
+                                    <constraint firstAttribute="height" constant="443" id="iQE-O2-Unq"/>
+                                </constraints>
+                                <string key="text">This completes the tutorial.  This App was design by Thomas Hartka, MD from the Department of Emergency Medicine at the University of Virginia.  Assistance with content was given by Daniel Shook.  We would like to thank the Academy of Distinguished Educators at the University of Virginia, without who's support this App would not have been developed.</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="[Touch anywhere to continue]" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8R-yQ-mHT">
+                                <rect key="frame" x="98" y="669" width="632" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="8ei-tt-M0q"/>
+                                    <constraint firstAttribute="width" constant="632" id="Jjk-so-DEa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wld-jQ-Kb1">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <connections>
+                                    <action selector="anywhereBtnPressed:" destination="RT1-Cr-h0P" eventType="touchUpInside" id="iE1-rP-O44"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="Bwg-CK-s8U"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="wld-jQ-Kb1" firstAttribute="top" secondItem="VAT-or-XBR" secondAttribute="topMargin" id="2PJ-yw-y6B"/>
+                            <constraint firstItem="Ses-9K-dRy" firstAttribute="leading" secondItem="VAT-or-XBR" secondAttribute="leading" id="8ah-oc-mTD"/>
+                            <constraint firstItem="cpe-2k-aJb" firstAttribute="centerX" secondItem="VAT-or-XBR" secondAttribute="centerX" id="Gwq-Oe-yg9"/>
+                            <constraint firstItem="I8R-yQ-mHT" firstAttribute="centerX" secondItem="VAT-or-XBR" secondAttribute="centerX" id="KXk-OF-VZL"/>
+                            <constraint firstItem="Ig8-YJ-HjG" firstAttribute="top" secondItem="wld-jQ-Kb1" secondAttribute="bottom" id="PHB-Cg-HN7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wld-jQ-Kb1" secondAttribute="trailing" constant="-20" id="X68-EN-2Ci"/>
+                            <constraint firstItem="cpe-2k-aJb" firstAttribute="top" secondItem="Ses-9K-dRy" secondAttribute="bottom" constant="78" id="d05-YD-U9w"/>
+                            <constraint firstItem="Ses-9K-dRy" firstAttribute="top" secondItem="VAT-or-XBR" secondAttribute="top" id="gF8-bl-eBK"/>
+                            <constraint firstItem="wld-jQ-Kb1" firstAttribute="leading" secondItem="VAT-or-XBR" secondAttribute="leadingMargin" constant="-20" id="jhB-R4-61B"/>
+                            <constraint firstItem="Ig8-YJ-HjG" firstAttribute="top" secondItem="I8R-yQ-mHT" secondAttribute="bottom" constant="306" id="o8K-Xe-wTS"/>
+                            <constraint firstAttribute="trailing" secondItem="Ses-9K-dRy" secondAttribute="trailing" id="tk6-lg-he5"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bCQ-Ah-dsz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fK5-tq-FIN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10571" y="1368"/>
+            <point key="canvasLocation" x="10483" y="1360"/>
         </scene>
         <!--QuestionVC-->
         <scene sceneID="o99-qj-ojN">
@@ -2261,7 +2326,7 @@
         <image name="spread" width="400" height="400"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="f8s-J5-ywv"/>
+        <segue reference="Bwg-CK-s8U"/>
         <segue reference="liw-SJ-3KF"/>
     </inferredMetricsTieBreakers>
 </document>
