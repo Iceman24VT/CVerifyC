@@ -1,5 +1,5 @@
 {
-  "PROMPT": "Identify pulmonary edema in either lung.",
-  "CORRECT_RESPONSE": "Correct.  This patient has severe pulmonary edema, most visible in the perihilar region.",
-  "INCORRECT_RESPONSE": "Incorrect.  This patient has severe pulmonary edema, it is most evident in the perihilar region."
+  "PROMPT": "Identify endotracheal tube.",
+  "CORRECT_RESPONSE": "Correct.  The endotracheal tube is located in the trachea and has a radiopaque wire within the side wall.",
+  "INCORRECT_RESPONSE": "Incorrect.  The endotracheal tube is located in the trachea and has a radiopaque wire within the side wall."
 }

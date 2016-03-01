@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -44,7 +44,7 @@
                                 <rect key="frame" x="186" y="341" width="222" height="30"/>
                                 <color key="backgroundColor" red="0.039215686274509803" green="0.36862745098039218" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="222" id="IME-N2-88p"/>
+                                    <constraint firstAttribute="width" constant="260" id="IME-N2-88p"/>
                                     <constraint firstAttribute="height" constant="30" id="SZQ-d8-iRr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
@@ -60,7 +60,7 @@
                                 <color key="backgroundColor" red="0.039215686270000001" green="0.36862745099999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="7kk-GB-haQ"/>
-                                    <constraint firstAttribute="width" constant="222" id="Ht5-wT-wtU"/>
+                                    <constraint firstAttribute="width" constant="260" id="Ht5-wT-wtU"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="222" id="Tba-Ia-2SY"/>
                                     <constraint firstAttribute="height" constant="30" id="wBs-LH-1Ug"/>
                                 </constraints>
@@ -82,11 +82,11 @@
                                 <rect key="frame" x="186" y="455" width="222" height="30"/>
                                 <color key="backgroundColor" red="0.039215686270000001" green="0.36862745099999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="222" id="2FF-Dy-0Wb"/>
+                                    <constraint firstAttribute="width" constant="260" id="2FF-Dy-0Wb"/>
                                     <constraint firstAttribute="height" constant="30" id="eVW-jf-BeU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                <state key="normal" title="Start training session">
+                                <state key="normal" title="Continue training session">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -117,7 +117,7 @@
                                 <rect key="frame" x="186" y="417" width="222" height="30"/>
                                 <color key="backgroundColor" red="0.039215686270000001" green="0.36862745099999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="222" id="DIL-JU-Gac"/>
+                                    <constraint firstAttribute="width" constant="260" id="DIL-JU-Gac"/>
                                     <constraint firstAttribute="height" constant="30" id="O2T-Ou-Vpd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
