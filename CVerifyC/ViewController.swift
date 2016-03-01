@@ -12,8 +12,9 @@ import CoreData
 class ViewController: UIViewController {
 
 
-    @IBOutlet weak var userNameLbl: UILabel!
-    @IBOutlet weak var addUser_changeUserBtn: UIButton!
+    @IBOutlet weak var userNameBtn: UIButton!
+    @IBOutlet weak var addUserBtn: RoundButton!
+    @IBOutlet weak var changeUserBtn: RoundButton!
     @IBOutlet weak var startTutorialBtn: UIButton!
     @IBOutlet weak var startTrainingBtn: UIButton!
     @IBOutlet weak var percentTrainingCompletedLbl: UILabel!
@@ -60,15 +61,22 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func addUser_changeUserBtnPressed(sender: AnyObject) {
-        if _userSelected! {
+    @IBAction func userNameBtnPressed(sender: AnyObject) {
+        if _userSelected == true {
             performSegueWithIdentifier("SegueHomeToUserSelection", sender: nil)
         } else {
             performSegueWithIdentifier("SegueHomeToLogin", sender: nil)
         }
-        
     }
-
+    
+    @IBAction func addUserBtnPressed(sender: AnyObject) {
+        performSegueWithIdentifier("SegueHomeToLogin", sender: nil)
+    }
+    
+    @IBAction func changeUserBtnPressed(sender: AnyObject) {
+        performSegueWithIdentifier("SegueHomeToUserSelection", sender: nil)
+    }
+    
     @IBAction func startTutorialBtnPressed(sender: AnyObject) {
         if _userSelected! {
             performSegueWithIdentifier("SegueHomeToTutorial", sender: nil)
@@ -98,7 +106,7 @@ class ViewController: UIViewController {
     
     func updateVCUserSelected() {
         //update user info
-        userNameLbl.text = "User: \(users.currentUser!.firstName!.capitalizedString) \(users!.currentUser!.lastName!.capitalizedString)"
+        userNameBtn.setTitle("User: \(users.currentUser!.firstName!.capitalizedString) \(users!.currentUser!.lastName!.capitalizedString)", forState: .Normal)
         percentTrainingCompletedLbl.text = "\(users.currentUser!.getPercentCompleteInt())% Complete"
         
         if metrics.userAnsweredAnyQuestions(users.currentUser!.userId!) {
@@ -120,18 +128,21 @@ class ViewController: UIViewController {
         }
         
         //activate buttons
-        addUser_changeUserBtn.setTitle("Change User", forState: .Normal)
+        changeUserBtn.alpha = 1.0
+        changeUserBtn.enabled = true
         startTutorialBtn.alpha = 1.0
         startTutorialBtn.enabled = true
     }
     
     func updateVCUserNotSelected() {
         //default text
-        userNameLbl.text = "User: None logged in [Add new user to continue]"
+        userNameBtn.setTitle("User: None logged in [Add new user to continue]", forState: .Normal)
         percentTrainingCompletedLbl.text = "0% Complete"
         
         //inactivate buttons
-        addUser_changeUserBtn.setTitle("Add User", forState: .Normal)
+        //addUser_changeUserBtn.setTitle("Add User", forState: .Normal)
+        changeUserBtn.alpha = 0.5
+        changeUserBtn.enabled = false
         startTutorialBtn.alpha = 0.5
         startTutorialBtn.enabled = false
         startTrainingBtn.alpha = 0.5
